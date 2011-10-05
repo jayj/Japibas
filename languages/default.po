@@ -1,0 +1,472 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Japibas\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-27 23:28+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jay <kontakt@jayj.dk>\n"
+"Language-Team: Jayj.dk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:6
+msgid "Uh oh, we can't find that page!"
+msgstr ""
+
+#: ../404.php:8
+msgid "Sorry, it appears the page you were looking for doesn't exist anymore or might have been moved."
+msgstr ""
+
+#: ../archive.php:9
+#, php-format
+msgid "Archive for &ldquo;%s&rdquo;"
+msgstr ""
+
+#: ../archive.php:11
+#, php-format
+msgid "Posts Tagged &ldquo;%s&rdquo;"
+msgstr ""
+
+#: ../archive.php:13
+#: ../archive.php:15
+#: ../archive.php:17
+#, php-format
+msgid "Archive for %s"
+msgstr ""
+
+#: ../archive.php:19
+msgid "Author Archive"
+msgstr ""
+
+#: ../archive.php:21
+msgid "Blog Archives"
+msgstr ""
+
+#: ../archive.php:36
+#: ../author.php:67
+#: ../index.php:21
+#: ../search.php:26
+msgid "Older Posts"
+msgstr ""
+
+#: ../archive.php:37
+#: ../author.php:68
+#: ../index.php:22
+#: ../search.php:27
+msgid "Newer Posts"
+msgstr ""
+
+#: ../archive.php:43
+#: ../search.php:33
+msgid "No posts where found"
+msgstr ""
+
+#: ../archive.php:47
+#, php-format
+msgid "<p>Sorry, but there aren't any posts in the %s category yet.</p>"
+msgstr ""
+
+#: ../archive.php:49
+msgid "<p>Sorry, but there aren't any posts with this date.</p>"
+msgstr ""
+
+#: ../author.php:16
+#, php-format
+msgid "Profile for %s"
+msgstr ""
+
+#: ../author.php:20
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: ../author.php:37
+#: ../comments.php:75
+msgid "Website"
+msgstr ""
+
+#: ../author.php:53
+#, php-format
+msgid "%s's latest posts"
+msgstr ""
+
+#: ../author.php:74
+#, php-format
+msgid "%s has not written any posts yet."
+msgstr ""
+
+#: ../comments.php:7
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: ../comments.php:17
+msgid "0 Comments"
+msgstr ""
+
+#: ../comments.php:17
+msgid "1 Comment"
+msgstr ""
+
+#: ../comments.php:17
+msgid "% Comments"
+msgstr ""
+
+#: ../comments.php:17
+#, php-format
+msgid "to &#8220;%s&#8221;"
+msgstr ""
+
+#: ../comments.php:35
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:45
+msgid "Leave a Reply"
+msgstr ""
+
+#: ../comments.php:45
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: ../comments.php:52
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: ../comments.php:59
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr ""
+
+#: ../comments.php:59
+msgid "Log out of this account"
+msgstr ""
+
+#: ../comments.php:59
+msgid "Log out &raquo;"
+msgstr ""
+
+#: ../comments.php:65
+msgid "Name"
+msgstr ""
+
+#: ../comments.php:65
+#: ../comments.php:70
+msgid "(required)"
+msgstr ""
+
+#: ../comments.php:70
+msgid "Email"
+msgstr ""
+
+#: ../comments.php:70
+msgid "(will not be published)"
+msgstr ""
+
+#: ../comments.php:82
+#, php-format
+msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+msgstr ""
+
+#: ../comments.php:85
+msgid "Submit Comment"
+msgstr ""
+
+#: ../header.php:88
+msgid "Home"
+msgstr ""
+
+#: ../header.php:99
+msgid "Error 404 - Page not found"
+msgstr ""
+
+#: ../page.php:12
+#: ../_post.php:32
+msgid "Edit"
+msgstr ""
+
+#: ../search.php:5
+msgid "Search results for"
+msgstr ""
+
+#: ../search.php:19
+msgid "Not what you're looking for?"
+msgstr ""
+
+#: ../search.php:20
+#: ../search.php:34
+msgid "Try to search for something else"
+msgstr ""
+
+#: ../searchform.php:9
+#: ../searchform.php:16
+msgid "Search"
+msgstr ""
+
+#: ../single.php:18
+msgid "Share This Post!"
+msgstr ""
+
+#: ../single.php:20
+msgid "Tweet this!"
+msgstr ""
+
+#: ../single.php:24
+msgid "Digg this!"
+msgstr ""
+
+#: ../single.php:28
+msgid "Bookmark on Delicious"
+msgstr ""
+
+#: ../single.php:32
+msgid "StumbleUpon"
+msgstr ""
+
+#: ../single.php:36
+msgid "Vote on Reddit"
+msgstr ""
+
+#: ../single.php:40
+msgid "Share on Facebook"
+msgstr ""
+
+#: ../slider.php:19
+msgid "Read more"
+msgstr ""
+
+#: ../_post.php:21
+#: ../_post.php:23
+msgid "Read more..."
+msgstr ""
+
+#: ../_post.php:31
+#, php-format
+msgid "Posted in %s"
+msgstr ""
+
+#: ../_post.php:31
+msgid "by"
+msgstr ""
+
+#: ../inc/admin.php:31
+msgid "Theme settings"
+msgstr ""
+
+#: ../inc/admin.php:43
+msgid "Exclude pages"
+msgstr ""
+
+#: ../inc/admin.php:44
+msgid "Select pages (ID) to exclude from the menu (seperate by comma)"
+msgstr ""
+
+#: ../inc/admin.php:49
+msgid "Exclude categories"
+msgstr ""
+
+#: ../inc/admin.php:50
+msgid "Select categories (ID) to exclude from the loop (Seperate by comma, Put - (minus) in front of them)"
+msgstr ""
+
+#: ../inc/admin.php:55
+msgid "Use Plain Text Logo"
+msgstr ""
+
+#: ../inc/admin.php:56
+msgid "Do you want show a Plaint Text Logo instead of an image?"
+msgstr ""
+
+#: ../inc/admin.php:62
+msgid "Hide description"
+msgstr ""
+
+#: ../inc/admin.php:63
+msgid "Do you want the theme to hide your blog description?"
+msgstr ""
+
+#: ../inc/admin.php:69
+msgid "Hide Home link"
+msgstr ""
+
+#: ../inc/admin.php:70
+msgid "Do you want to hide the Home link in the navigation?"
+msgstr ""
+
+#: ../inc/admin.php:84
+msgid "Slider"
+msgstr ""
+
+#: ../inc/admin.php:88
+msgid "Slider Category"
+msgstr ""
+
+#: ../inc/admin.php:89
+msgid "Choose a category for the slider posts"
+msgstr ""
+
+#: ../inc/admin.php:94
+msgid "Number of Posts"
+msgstr ""
+
+#: ../inc/admin.php:95
+msgid "Number of posts in the slider"
+msgstr ""
+
+#: ../inc/admin.php:101
+msgid "Remove slider"
+msgstr ""
+
+#: ../inc/admin.php:102
+msgid "Check this box if you want to remove the slider"
+msgstr ""
+
+#: ../inc/admin.php:117
+msgid "Post settings"
+msgstr ""
+
+#: ../inc/admin.php:121
+msgid "Social icons"
+msgstr ""
+
+#: ../inc/admin.php:122
+msgid "Wanna show social icons after each post?"
+msgstr ""
+
+#: ../inc/admin.php:128
+msgid "Comments on pages"
+msgstr ""
+
+#: ../inc/admin.php:129
+msgid "Allow comments on pages? (Can be turned off for individual pages)"
+msgstr ""
+
+#: ../inc/admin.php:144
+msgid "Other settings"
+msgstr ""
+
+#: ../inc/admin.php:148
+msgid "Footer text"
+msgstr ""
+
+#: ../inc/admin.php:149
+msgid "Edit the footer text and credit links here."
+msgstr ""
+
+#: ../inc/admin.php:154
+msgid "Google Analytics"
+msgstr ""
+
+#: ../inc/admin.php:155
+msgid "Insert your Google Analytics (or other) code here."
+msgstr ""
+
+#: ../inc/admin.php:168
+msgid "Sidebar Ads 125x125"
+msgstr ""
+
+#: ../inc/admin.php:172
+msgid "Ad-1"
+msgstr ""
+
+#: ../inc/admin.php:173
+#: ../inc/admin.php:179
+#: ../inc/admin.php:185
+#: ../inc/admin.php:191
+#: ../inc/admin.php:197
+#: ../inc/admin.php:203
+#: ../inc/admin.php:209
+msgid "HTML Code (&lt;a href=\"link.com\"&gt;&lt;img src=\"linktoimage\" alt=\"\" /&gt;&lt;/a&gt;)"
+msgstr ""
+
+#: ../inc/admin.php:178
+msgid "Ad-2"
+msgstr ""
+
+#: ../inc/admin.php:184
+msgid "Ad-3"
+msgstr ""
+
+#: ../inc/admin.php:190
+msgid "Ad-4"
+msgstr ""
+
+#: ../inc/admin.php:196
+msgid "Ad-5"
+msgstr ""
+
+#: ../inc/admin.php:202
+msgid "Ad-6"
+msgstr ""
+
+#: ../inc/admin.php:208
+msgid "<strong>Footer Ad</strong>"
+msgstr ""
+
+#: ../inc/admin.php:262
+msgid "settings"
+msgstr ""
+
+#: ../inc/admin.php:283
+#: ../inc/admin.php:471
+msgid "Save Changes"
+msgstr ""
+
+#: ../inc/admin.php:424
+msgid "Information"
+msgstr ""
+
+#: ../inc/admin.php:427
+#, php-format
+msgid "You are using version %s of the Japibas theme."
+msgstr ""
+
+#: ../inc/admin.php:428
+msgid "Japibas has been created by"
+msgstr ""
+
+#: ../inc/admin.php:430
+msgid "Follow me on Twitter"
+msgstr ""
+
+#: ../inc/admin.php:431
+msgid "Buy my Premium themes on ThemeForest.net"
+msgstr ""
+
+#: ../inc/admin.php:442
+msgid "Latest Posts from Jayj.dk"
+msgstr ""
+
+#: ../inc/admin.php:479
+msgid "Reset"
+msgstr ""
+
+#: ../inc/ads.php:42
+msgid "No ads found"
+msgstr ""
+
+#: ../inc/ads.php:62
+msgid "Title"
+msgstr ""
+
+#: ../inc/panel.php:15
+msgid "Post Thumbnail"
+msgstr ""
+
+#: ../inc/panel.php:16
+msgid "200x200px recommended"
+msgstr ""
+
+#: ../inc/panel.php:21
+msgid "Featured image"
+msgstr ""
+
+#: ../inc/panel.php:22
+msgid "Image for featured posts. Max 900x220px"
+msgstr ""
+
