@@ -3,8 +3,7 @@
  * The slider template consists of posts from a chosen category chosen 
  * in the theme options
  */
-
-get_header(); ?>
+?>
 
 	<?php
 		/**
@@ -28,9 +27,9 @@ get_header(); ?>
 			$counter_slider = 0;
     ?>
     
-        <div id="featured-section">
-			<div id="inner-slider">
-            <ul class="slides">
+        <div id="featured-section"><div id="inner-slider">
+
+			<ul class="slides">
 				<?php
 					// Let's roll
 					while ( $featured->have_posts() ) : $featured->the_post();

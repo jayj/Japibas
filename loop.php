@@ -24,7 +24,6 @@
         <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
     <?php } ?>
     
-    
     <?php if ( is_archive() || is_search() ) : ?>
     
 		<?php
@@ -86,16 +85,16 @@
     </div> <!-- .entry-meta -->
     
     <?php if ( 'post' == get_post_type() ) : ?>
-        <div class="entry-date" title="<?php printf( __( 'Posted on %s', 'japibas' ), get_the_date() ); ?>">
+        <a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Posted on %s', 'japibas' ), get_the_date() ); ?>" class="entry-date">
             <span><?php echo get_the_date( 'd' ); ?></span>
             <?php echo get_the_date( 'M' ); ?>
-        </div> <!-- .entry-date -->
+        </a> <!-- .entry-date -->
     <?php endif; ?>
     
     <?php
         // Show the number of comments
         if ( comments_open() && ! post_password_required() )
-            comments_popup_link( '0', '1', '%', 'comments-num', '' ); 
+            comments_popup_link( '0', '1', '%', 'entry-comments-number', '' );
     ?>
     
 </div> <!-- .post-<?php the_ID(); ?> -->

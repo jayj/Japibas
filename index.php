@@ -3,7 +3,7 @@
     <div id="main">
     
     <?php
-    	var_dump( get_option( 'japibas_theme_options' ) );
+    	//var_dump( get_option( 'japibas_theme_options' ) );
 		//var_dump( japibas_get_setting() );
 		//var_dump( japibas_get_setting( 'color_scheme' ) );
 		//var_dump( japibas_get_setting( 'footer_text' ) );
@@ -12,14 +12,14 @@
 		global $wp_query;
 		query_posts(
 			array_merge(
-				array( 'category__not_in' => japibas_get_setting( 'exclude_cats' ) ),
+				array( 'category__not_in' => (array) japibas_get_setting( 'exclude_cats' ) ),
 				$wp_query->query
 			)
 		);
 		
 		if ( have_posts() ) while( have_posts() ) : the_post();
 		
-			get_template_part( 'loop', 'index' );
+			get_template_part( 'loop', get_post_format() );
 		
 		endwhile;
     ?>

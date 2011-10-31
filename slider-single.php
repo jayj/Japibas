@@ -2,8 +2,7 @@
 /**
  * This is shown if the single post has a thumbnail larger than 920px i width
  */
-
-get_header(); ?>
+?>
     
 	<?php
         // Get image size of the featured image to see if the content needs to be removed
