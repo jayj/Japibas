@@ -48,9 +48,6 @@ add_action( 'admin_init', 'japibas_theme_options_init' );
 /**
  * Change the capability required to save the 'japibas_options' options group.
  *
- * @see japibas_theme_options_init() First parameter to register_setting() is the name of the options group.
- * @see japibas_theme_options_add_page() The edit_theme_options capability is used for viewing the page.
- *
  * @param string $capability The capability used for the page, which is manage_options by default.
  * @return string The capability to actually use.
  */
@@ -122,16 +119,21 @@ function japibas_color_schemes() {
  */
 function japibas_layouts() {
 	$layout_options = array(
-		'content-sidebar' => array(
+		'sidebar-right' => array(
 			'value' => 'sidebar-right',
 			'label' => __( 'Content on left', 'japibas' ),
 			'thumbnail' => get_template_directory_uri() . '/inc/images/content-sidebar.png',
 		),
-		'sidebar-content' => array(
+		'sidebar-left' => array(
 			'value' => 'sidebar-left',
 			'label' => __( 'Content on right', 'japibas' ),
 			'thumbnail' => get_template_directory_uri() . '/inc/images/sidebar-content.png',
-		)
+		),
+		'no-sidebar' => array(
+			'value' => 'no-sidebar',
+			'label' => __( 'One-column, no sidebar', 'japibas' ),
+			'thumbnail' => get_template_directory_uri() . '/inc/images/content.png',
+		),
 	);
 
 	return $layout_options;
@@ -152,6 +154,10 @@ function japibas_get_default_theme_options() {
 		'slider_posts' => 5,
 		'footer_text' => '<p class="alignleft">' . __( 'Copyright &#169; [the-year] [site-link]', 'japibas' ) . '</p>' . "\n\n" . '<p class="alignright">' . __( 'Powered by [wp-link] and [theme-link]', 'japibas' ) . '</p>'
 	);
+	
+	// Change default footer text if it's a child theme
+	if ( is_child_theme() )
+		$default_theme_options['footer_text'] = '<p class="alignleft">' . __( 'Copyright &#169; [the-year] [site-link].', 'japibas' ) . '</p>' . "\n\n" . '<p class="alignright">' . __( 'Powered by [wp-link], [theme-link], and [child-link].', 'japibas' ) . '</p>';
 
 	return $default_theme_options;
 }
@@ -337,12 +343,18 @@ function japibas_theme_options_render_page() { ?>
                 <td>
                     <fieldset>
                     	<legend class="screen-reader-text"><span><?php _e( 'Footer text', 'japibas' ); ?></span></legend>
-
-                            <label>
-                                <textarea name="japibas_theme_options[footer_text]" cols="60" rows="5"><?php echo esc_textarea( $options['footer_text'] ); ?></textarea>
-
-                                <p class="description"><?php _e( 'You can add custom <acronym title="Hypertext Markup Language">HTML</acronym> and/or shortcodes, which will be automatically inserted into your theme.', 'japibas' ); ?></p>
-                            </label>
+                            <div style="width: 50%;">
+                                <?php
+                                    wp_editor( $options['footer_text'], 'japibas-footer-text', array(
+                                        'textarea_name' => 'japibas_theme_options[footer_text]',
+                                        'media_buttons' => false,
+                                        'wpautop' => false,
+                                        'textarea_rows' => 7
+                                    ) );
+                                ?>
+                            </div>
+                            <p class="description"><?php _e( 'You can add custom <acronym title="Hypertext Markup Language">HTML</acronym> and/or shortcodes, which will be automatically inserted into your theme.', 'japibas' ); ?></p>
+                            <p><?php printf( __( 'Shortcodes: %s', 'japubas' ), '<code>[the-year]</code>, <code>[site-link]</code>, <code>[wp-link]</code>, <code>[theme-link]</code>, <code>[child-link]</code>, <code>[loginout-link]</code>, <code>[query-counter]</code>' ); ?></p>
 
                     </fieldset>
                 </td>
@@ -370,7 +382,7 @@ function japibas_theme_options_validate( $input ) {
 	$output = $defaults = japibas_get_default_theme_options();
 
 	// Color scheme
-	if ( isset( $input['color_scheme'] ) )
+	if ( isset( $input['color_scheme'] ) && array_key_exists( $input['color_scheme'], japibas_color_schemes() ) )
 		$output['color_scheme'] = $input['color_scheme'];
 
 	// Our defaults for the link color may have changed
@@ -385,6 +397,7 @@ function japibas_theme_options_validate( $input ) {
 		$output['theme_layout'] = $input['theme_layout'];
 
 	$output['exclude_cats'] = (array) $input['exclude_cats'];
+	$output['slider_category'] = intval( $input['slider_category'] );
 	$output['slider_posts'] = intval( $input['slider_posts'] );
 	$output['footer_text'] = $input['footer_text'];
 
@@ -456,14 +469,8 @@ add_action( 'wp_head', 'japibas_print_link_color_style' );
  */
 function japibas_layout_classes( $classes ) {
 	$options = japibas_get_theme_options();
-	$current_layout = $options['theme_layout'];
 
-	if ( 'sidebar-right' == $current_layout )
-		$classes[] = 'right-sidebar';
-	elseif ( 'sidebar-left' == $current_layout )
-		$classes[] = 'left-sidebar';
-	else
-		$classes[] = $current_layout;
+	$classes[] = sanitize_html_class( $options['theme_layout'] );
 
 	return $classes;
 }
