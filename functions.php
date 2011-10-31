@@ -19,6 +19,8 @@ add_action( 'after_setup_theme', 'jap_setup' );
 function jap_setup() {
 
 	define( 'THEMEVERSION', '2.0' );
+	
+	$template_directory = get_template_directory();
 
 	add_custom_background();
 	add_theme_support( 'automatic-feed-links' );
@@ -38,32 +40,35 @@ function jap_setup() {
 	add_image_size( 'slider', 480, 220, true );
 	add_image_size( 'slider-large', 920, 220, true );
 
-	/* Load the Get the Image extension if supported. */
-	add_theme_support( 'get-the-image' );
-	require_if_theme_supports( 'get-the-image', dirname( __FILE__ ) . '/inc/get-the-image.php' );
+	/* Load the Get the Image extension */
+	include( $template_directory . '/inc/get-the-image.php' );
+	
+	/* Load the shortcodes */
+	include( $template_directory . '/inc/shortcodes.php' );
 
-	/*
-	 * Include widgets, admin panel and meta boxes
-	 */
-	require( dirname( __FILE__ ) . '/inc/widgets.php' );
+	/* Load custom widgets */
+	require( $template_directory . '/inc/widgets.php' );
 	
-	// Load up the theme options page and related code
-	require( dirname( __FILE__ ) . '/inc/theme-options.php' );
+	/* Load up the theme options page and related code */
+	require( $template_directory . '/inc/theme-options.php' );
 	
-	if ( is_admin() ) {
-		require_once( dirname( __FILE__ ) . '/inc/metabox.php' );
-	};
+	/* Load the editor metaboxes */
+	if ( is_admin() )
+		require_once( $template_directory . '/inc/metabox.php' );
 
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
+	
+	/* Remove default gallery style */
+	add_filter( 'use_default_gallery_style', '__return_false' );
 
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 */
-/*	load_theme_textdomain( 'japibas', TEMPLATEPATH . '/languages' );
+/*	load_theme_textdomain( 'japibas', $template_directory . '/languages' );
 
 	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	$locale_file = $template_directory . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );*/
 
@@ -109,12 +114,32 @@ function jap_sidebars() {
 	) );
 	
 	// Footer
-	register_sidebar( array (
-		'name' => __( 'Footer Widgets', 'japibas' ),
-		'id' => 'footer-widgets',
-		'description' => __( 'Widgets for the footer', 'japibas' ),
-		'before_widget' => '<div class="footer-col %2$s" id="%1$s">',
-		'after_widget' => '</div>',
+	register_sidebar( array(
+		'name' => __( 'Footer Area One', 'japibas' ),
+		'id' => 'footer-area-1',
+		'description' => __( 'An optional widget area for your site footer', 'japibas' ),
+		'before_widget' => '<div class="footer-widget %2$s" id="%1$s">',
+		'after_widget' => "</div>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer Area Two', 'japibas' ),
+		'id' => 'footer-area-2',
+		'description' => __( 'An optional widget area for your site footer', 'japibas' ),
+		'before_widget' => '<div class="footer-widget %2$s" id="%1$s">',
+		'after_widget' => "</div>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer Area Three', 'japibas' ),
+		'id' => 'footer-area-3',
+		'description' => __( 'An optional widget area for your site footer', 'japibas' ),
+		'before_widget' => '<div class="footer-widget %2$s" id="%1$s">',
+		'after_widget' => "</div>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
@@ -156,6 +181,19 @@ function japibas_body_class( $classes ) {
 }
 
 add_filter( 'body_class', 'japibas_body_class' );
+
+/**
+ * Return the URL for the first link found in the post content.
+ *
+ * @since Japubas 2.0
+ * @return string|bool URL or false when no link is present.
+ */
+function japibas_url_grabber() {
+	if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
+		return false;
+
+	return esc_url_raw( $matches[1] );
+}
 
 /**
  * Loads the Japibas theme settings once and allows the input of the specific field the user would
@@ -227,6 +265,21 @@ function japibas_custom_excerpt_more( $output ) {
 	return $output;
 }
 add_filter( 'get_the_excerpt', 'japibas_custom_excerpt_more' );
+
+/**
+ * Add contact methods 
+ *
+ * @since 2.0
+ */
+function japibas_contactmethods( $contactmethods ) {
+
+	$contactmethods['twitter'] = 'Twitter';
+	$contactmethods['google_profile'] = 'Google Profile URL';
+
+	return $contactmethods;
+}
+
+add_filter( 'user_contactmethods', 'japibas_contactmethods', 10, 1 );
 
 /**
  * Template for comments and pingbacks.

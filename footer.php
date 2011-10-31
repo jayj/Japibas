@@ -1,24 +1,29 @@
 
 	<div class="clear"></div>
-    
+
 </div> <!-- #content -->
 
 <div id="footer">
 
-	<?php echo htmlspecialchars_decode( japibas_get_setting( 'footer_text' ) ); ?>
-        
 	<?php 
-		if ( japibas_get_setting( 'footer_ad' ) )
-			echo '<div id="footer_ad">' . htmlspecialchars_decode( japibas_get_setting( 'footer_ad' ) ) . '</div>';
-    ?>
-   
+		$footer_text = japibas_get_setting( 'footer_text' );
+		echo htmlspecialchars_decode( do_shortcode( $footer_text ) );
+	?>
+
+	<div class="clear"></div>
+
+	<?php
+		/* A sidebar in the footer? Yep. You can can customize
+		 * your footer with three columns of widgets.
+		*/
+		get_sidebar( 'footer' );
+	?>
+
 </div> <!-- #footer -->
 
 </div> <!-- #wrapper -->
 
-	<?php echo htmlspecialchars_decode( japibas_get_setting( 'analytics_code' ) ); ?>
-    
     <?php wp_footer(); ?>
-    
+
 </body>
 </html>
