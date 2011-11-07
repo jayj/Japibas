@@ -4,9 +4,24 @@
  */
 ?>
 
-<div <?php post_class(); ?>>
+<article <?php post_class(); ?>>
     
-	<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+
+        <time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" pubdate>
+            <a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Posted on %s', 'japibas' ), get_the_date() ); ?>">
+                <span><?php echo get_the_date( 'd' ); ?></span>
+                <?php echo get_the_date( 'M' ); ?>
+            </a> <!-- .entry-date -->
+        </time>
+
+        <?php
+        	// Show the number of comments
+        	if ( comments_open() && ! post_password_required() )
+        		comments_popup_link( '0', '1', '%', 'entry-comments-number', '' );
+        ?>
+	</header> <!-- .entry-header -->
 
     <div class="entry-content">
         <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'japibas' ) );  ?>
@@ -15,7 +30,7 @@
 
     <div class="clear"></div>
     
-    <div class="entry-meta">
+    <footer class="entry-meta">
             <?php
 				// The entry meta
 				printf( __( '<a href="%1$s" title="%2$s">Video</a> posted by <span class="author vcard"><a class="url fn n" href="%3$s" title="%4$s">%5$s</a></span> on <a href="%6$s" rel="bookmark">%7$s</a>', 'japibas' ),
@@ -30,17 +45,6 @@
                 
                 edit_post_link( __( 'Edit', 'japibas' ), ' | ', '' );
             ?>
-    </div> <!-- .entry-meta -->
-    
-    <a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Posted on %s', 'japibas' ), get_the_date() ); ?>" class="entry-date">
-        <span><?php echo get_the_date( 'd' ); ?></span>
-        <?php echo get_the_date( 'M' ); ?>
-    </a> <!-- .entry-date -->
-        
-    <?php
-        // Show the number of comments
-        if ( comments_open() && ! post_password_required() )
-            comments_popup_link( '0', '1', '%', 'entry-comments-number', '' );
-    ?>
-    
-</div> <!-- .post-<?php the_ID(); ?> -->
+    </footer> <!-- .entry-meta -->
+
+</article> <!-- .post-<?php the_ID(); ?> -->

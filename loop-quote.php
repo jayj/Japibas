@@ -4,9 +4,11 @@
  */
 ?>
 
-<div <?php post_class(); ?>>
+<article <?php post_class(); ?>>
     
-	<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+	</header> <!-- .entry-header -->
 
     <div class="entry-content">
         <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'japibas' ) );  ?>
@@ -15,7 +17,7 @@
 
     <div class="clear"></div>
     
-    <div class="quote-meta">
+    <footer class="quote-meta">
             <?php
 				// The quote meta
 				printf( __( '<a href="%1$s" title="%2$s">Quote</a> posted by <span class="author vcard"><a class="url fn n" href="%3$s" title="%4$s">%5$s</a></span> on <a href="%6$s" rel="bookmark">%7$s</a>', 'japibas' ),
@@ -30,6 +32,6 @@
                 
                 edit_post_link( __( 'Edit', 'japibas' ), ' | ', '' );
             ?>
-    </div> <!-- .quote-meta -->
+    </footer> <!-- .quote-meta -->
     
-</div> <!-- .post-<?php the_ID(); ?> -->
+</article> <!-- .post-<?php the_ID(); ?> -->

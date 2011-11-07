@@ -1,12 +1,14 @@
 <?php get_header(); ?>
 
-<div id="main">
+<div id="content">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
         <div <?php post_class(); ?>>
 
-            <h1 class="entry-title"><?php the_title(); ?></h1>
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+	</header> <!-- .entry-header -->
 
             <?php
 				if ( ! post_password_required() )
@@ -24,7 +26,7 @@
 
             <div class="clear"></div>
 
-			<?php edit_post_link( __( 'Edit', 'japibas' ), '<div class="entry-meta">', '</div> <!-- .entry-meta -->' ); ?>
+			<?php edit_post_link( __( 'Edit', 'japibas' ), '<footer class="entry-meta">', '</footer> <!-- .entry-meta -->' ); ?>
 
         </div> <!-- .post-<?php the_ID(); ?> -->
 
@@ -32,7 +34,7 @@
 
     <?php comments_template(); ?>
 
-</div> <!-- #main -->
+</div> <!-- #content -->
 
 <?php 
 	get_sidebar(); 

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="main">
+<div id="content">
 
 	<?php
 		if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -21,18 +21,18 @@
     
     <?php else : ?>
      
-        <div class="post hentry not-found">
+        <article class="post hentry not-found">
             <h1 class="entry-title"><?php _e( 'Nothing Found', 'japibas' ); ?></h1>
             
             <div class="entry-content">
                 <p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'japibas' ); ?></p>
                 <?php get_search_form(); ?>
             </div> <!-- .entry-content -->
-        </div> <!-- .post.not-found -->
+        </article> <!-- .post.not-found -->
     
     <?php endif; ?>
     
-</div> <!-- end main -->
+</div> <!-- #content -->
 
 <?php 
 	get_sidebar(); 

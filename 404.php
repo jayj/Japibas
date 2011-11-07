@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="main" class="full">
+<div id="content">
 
     <article class="hentry post error404 not-found">
 
@@ -28,6 +28,6 @@
 
     </article> <!-- .not-found -->
 
-</div> <!-- #main -->
+</div> <!-- #content -->
 
 <?php get_footer(); ?>

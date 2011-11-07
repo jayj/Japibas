@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="main">
+<div id="content">
 
 	<?php
     	if ( have_posts() ) while( have_posts() ) : the_post();
@@ -18,7 +18,7 @@
 
     <?php comments_template(); ?>
     
-</div> <!-- #main -->
+</div> <!-- #content -->
 
 <?php 
 	get_sidebar(); 

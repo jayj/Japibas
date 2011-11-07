@@ -27,7 +27,7 @@
         if ( ! empty( $feature_size ) && $feature_size[0][0] >= 920 ) :
     ?>
     
-        <div id="featured-section">
+        <section id="featured-section">
 
             <ul class="slides">
 
@@ -45,7 +45,7 @@
 
             </ul> <!-- .slides -->
 
-        </div> <!-- #featured-section -->
+        </section> <!-- #featured-section -->
     
     <?php else : ?>
 

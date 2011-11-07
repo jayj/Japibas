@@ -4,7 +4,7 @@
 	$user_id = get_query_var( 'author' );
 ?>
 
-<div id="main">
+<section id="content">
 
 	<?php
 		/**
@@ -74,7 +74,7 @@
 
 	<?php japibas_paginate_links(); ?> 
     
-</div> <!-- #main -->
+</section> <!-- #content -->
 
 <?php 
 	get_sidebar(); 

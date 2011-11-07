@@ -81,7 +81,10 @@ function jap_setup() {
  */
 function jap_enqueue_script() {
 	wp_enqueue_script( 'jquery' );
-	//wp_enqueue_script( 'anythingslider', get_template_directory_uri() . '/js/jquery.anythingslider.min.js', array( 'jquery' ), '1.5.12', true );
+	
+	if ( japibas_get_setting( 'slider_category' ) && ( is_home() || is_front_page() ) )
+		wp_enqueue_script( 'sudoSlider', get_template_directory_uri() . '/js/jquery.sudoSlider.min.js', array( 'jquery' ), '1.2.5', true );
+
 	wp_enqueue_script( 'jap-theme', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '2.0', true );
 }
 
@@ -176,6 +179,9 @@ function japibas_body_class( $classes ) {
 	
 	if ( ! japibas_get_setting( 'slider_category' ) )
 		$classes[] = 'slider-disabled';
+		
+	if ( is_404() )
+		$classes[] = 'no-sidebar';
 
 	return $classes;
 }
@@ -185,7 +191,7 @@ add_filter( 'body_class', 'japibas_body_class' );
 /**
  * Return the URL for the first link found in the post content.
  *
- * @since Japubas 2.0
+ * @since Japibas 2.0
  * @return string|bool URL or false when no link is present.
  */
 function japibas_url_grabber() {
@@ -272,7 +278,6 @@ add_filter( 'get_the_excerpt', 'japibas_custom_excerpt_more' );
  * @since 2.0
  */
 function japibas_contactmethods( $contactmethods ) {
-
 	$contactmethods['twitter'] = 'Twitter';
 	$contactmethods['google_profile'] = 'Google Profile URL';
 

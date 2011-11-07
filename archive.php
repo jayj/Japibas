@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="main">
+<div id="content">
 
 	<?php if ( have_posts() ) : ?>
 
@@ -12,20 +12,22 @@
 
 	<?php else : ?>
 
-        <div id="post-0" class="post hentry no-results not-found">
-            <h2 class="entry-title"><?php _e( 'Nothing Found', 'japibas' ); ?></h2>
+        <article id="post-0" class="post hentry no-results not-found">
+        	<header class="entry-header">
+            	<h1 class="entry-title"><?php _e( 'Nothing Found', 'japibas' ); ?></h1>
+            </header> <!-- .entry-header -->
 
             <div class="entry-content">
                 <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'japibas' ); ?></p>
                 <?php get_search_form(); ?>
             </div> <!-- .entry-content -->
-        </div> <!-- #post-0 -->
+        </article> <!-- #post-0 -->
 
 	<?php endif; ?>
 
 	<?php japibas_paginate_links(); ?> 
 
-</div> <!-- #main -->
+</div> <!-- #content -->
 
 <?php 
 	get_sidebar(); 

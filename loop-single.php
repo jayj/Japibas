@@ -4,10 +4,21 @@
  */
 ?>
 
-<div <?php post_class(); ?>>
+<article <?php post_class(); ?>>
 
-	<h1 class="entry-title"><?php the_title(); ?></h1>
-    
+    <header class="entry-header">
+        <h1 class="entry-title"><?php the_title(); ?></h1>
+        
+        <?php if ( 'post' == get_post_type() ) : ?>
+            <time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" pubdate>
+                <a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Posted on %s', 'japibas' ), get_the_date() ); ?>">
+                    <span><?php echo get_the_date( 'd' ); ?></span>
+                    <?php echo get_the_date( 'M' ); ?>
+                </a> <!-- .entry-date -->
+            </time>
+        <?php endif; ?>
+    </header> <!-- .entry-header -->
+
 	<?php
         if ( ! post_password_required() )
             get_the_image( array(
@@ -16,7 +27,7 @@
                 'size' => 'thumbnail',
             ) );
     ?>
-    
+
     <div class="entry-content">
         <?php the_content();  ?>
         <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( '<span>Pages:</span>', 'japibas' ), 'after' => '</div>' ) ); ?>
@@ -25,9 +36,9 @@
     <div class="clear"></div>
     
     <?php if ( has_post_format( 'quote' ) ) : ?>
-    	<div class="quote-meta">
+    	<footer class="quote-meta">
     <?php else : ?>
-    	<div class="entry-meta">
+    	<footer class="entry-meta">
 	<?php endif; ?>
 
             <?php
@@ -52,13 +63,6 @@
                 
                 edit_post_link( __( 'Edit', 'japibas' ), ' | ', '' );
             ?>
-    </div> <!-- .entry-meta -->
+    </footer> <!-- .entry-meta -->
     
-    <?php if ( 'post' == get_post_type() ) : ?>
-        <a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Posted on %s', 'japibas' ), get_the_date() ); ?>" class="entry-date">
-            <span><?php echo get_the_date( 'd' ); ?></span>
-            <?php echo get_the_date( 'M' ); ?>
-        </a> <!-- .entry-date -->
-    <?php endif; ?>
-    
-</div> <!-- .post-<?php the_ID(); ?> -->
+</article> <!-- .post-<?php the_ID(); ?> -->

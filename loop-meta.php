@@ -207,7 +207,7 @@
 					$type = __( 'Y', 'japibas' ); // Year
 			?>
         
-			<h1 class="page-title"><?php printf( __( 'Archives for %s', 'japibas' ), get_the_date( $type ) ); ?></h1>
+			<h1 class="page-title"><?php printf( __( 'Archives for %s', 'japibas' ), '<span>' . get_the_date( $type ) . '</span>' ); ?></h1>
 
 			<div class="loop-description">
 				<p><?php _e( 'You are browsing the site archives by date.', 'japibas' ); ?></p>

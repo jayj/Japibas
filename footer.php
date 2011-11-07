@@ -1,9 +1,9 @@
 
 	<div class="clear"></div>
 
-</div> <!-- #content -->
+</div> <!-- #main -->
 
-<div id="footer">
+<footer id="colophon" role="contentinfo">
 
 	<?php 
 		$footer_text = japibas_get_setting( 'footer_text' );
@@ -19,7 +19,7 @@
 		get_sidebar( 'footer' );
 	?>
 
-</div> <!-- #footer -->
+</footer> <!-- #colophon -->
 
 </div> <!-- #wrapper -->
 

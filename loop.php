@@ -16,22 +16,36 @@
  */
 ?>
 
-<div <?php post_class(); ?>>
+<article <?php post_class(); ?>>
     
-	<?php if ( is_singular() ) { // If Single, Page or Attachment ?>
-        <h1 class="entry-title"><?php the_title(); ?></h1>
-    <?php } else { ?>
-        <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-    <?php } ?>
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+        
+		<?php if ( 'post' == get_post_type() ) : ?>
+            <time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" pubdate>
+                <a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Posted on %s', 'japibas' ), get_the_date() ); ?>">
+                    <span><?php echo get_the_date( 'd' ); ?></span>
+                    <?php echo get_the_date( 'M' ); ?>
+                </a> <!-- .entry-date -->
+            </time>
+        <?php endif; ?>
+        
+        <?php
+            // Show the number of comments
+            if ( comments_open() && ! post_password_required() )
+                comments_popup_link( '0', '1', '%', 'entry-comments-number', '' );
+        ?>
+	</header> <!-- .entry-header -->
     
     <?php if ( is_archive() || is_search() ) : ?>
     
 		<?php
-			get_the_image( array(
-				'meta_key' => array( 'thumbnail' ),
-				'attachment' => false,
-				'size' => 'small',
-			) );
+			if ( ! post_password_required() )
+				get_the_image( array(
+					'meta_key' => array( 'thumbnail' ),
+					'attachment' => false,
+					'size' => 'small',
+				) );
 		?>
         
         <div class="entry-summary">
@@ -59,7 +73,7 @@
     
     <div class="clear"></div>
     
-    <div class="entry-meta">
+    <footer class="entry-meta">
             <?php
 				// Post meta, make sure it's a post
 				if ( 'post' == get_post_type() ) :
@@ -82,19 +96,6 @@
                 
                 edit_post_link( __( 'Edit', 'japibas' ), ' | ', '' );
             ?>
-    </div> <!-- .entry-meta -->
+    </footer> <!-- .entry-meta -->
     
-    <?php if ( 'post' == get_post_type() ) : ?>
-        <a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Posted on %s', 'japibas' ), get_the_date() ); ?>" class="entry-date">
-            <span><?php echo get_the_date( 'd' ); ?></span>
-            <?php echo get_the_date( 'M' ); ?>
-        </a> <!-- .entry-date -->
-    <?php endif; ?>
-    
-    <?php
-        // Show the number of comments
-        if ( comments_open() && ! post_password_required() )
-            comments_popup_link( '0', '1', '%', 'entry-comments-number', '' );
-    ?>
-    
-</div> <!-- .post-<?php the_ID(); ?> -->
+</article> <!-- .post-<?php the_ID(); ?> -->
