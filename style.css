@@ -80,7 +80,8 @@ h2 {
 	letter-spacing: -1px;	
 }
 
-h3 {
+h3,
+.widget-title {
 	border-bottom: 1px solid #e7e7e7;
 	color: #111;
 	font-size: 24px;
@@ -144,12 +145,11 @@ dl { margin: 0 0 25px 5px; }
 dl dt { font-weight: bold; margin: 10px 0 0 0; }
 dl dd { margin: 5px 0 0 1.5em; }
 
-
 /* Code */
 code {
 	background: #ffc;
 	border-radius: 5px;
-	font: 12px/25px monospace, "Courier New", Courier;	
+	font: 12px/25px monospace;	
 	padding: 5px 7px;
 }
 
@@ -159,14 +159,14 @@ pre {
 	border-width: 1px 0;
 	border-radius: 5px;
 	color: #fff;
-	font: 14px/25px monospace, "Courier New", Courier;
+	font: 14px/25px monospace;
 	text-shadow: 1px 1px 0px #3e3e3e;
 	margin: 20px 0;
 	padding: 20px;
 	white-space: pre; white-space: pre-wrap; word-wrap: break-word;
 }	
 
-pre code { background: none; font: 14px/25px monospace, "Courier New", Courier;	padding: 0; }
+pre code { background: none; font: 14px/25px monospace;	padding: 0; }
 
 /* Quotes */
 blockquote {
@@ -292,37 +292,33 @@ hr { border-top: 1px #ccc solid; clear: both; height: 0; margin: 20px 0; }
 }
 
 #site-title {
-	margin: 0;	
-}
-
-/* The logo */
-#site-title a {
-	background: url(images/logo.png) no-repeat;
-	float: left;
-	display: block;
-	margin: 27px 0 0 25px;
-	text-indent: -9999px;
+	margin: 0;
 	
-	/* Logo width and height */
-	width: 169px;
-	height: 32px;	
 }
 
-/*#branding h1.noimage a, #branding h2.noimage a{
-	background: none;
-	font-size: 32px;
-	height: auto; width: auto;
-	letter-spacing: -1px;
-	margin-top: 28px;
-	text-indent: 0;
-	color: #fff; text-shadow: #000 1px 1px 0;
-}*/
+#site-title a {
+	color: #fff;
+	display: block;
+	font: bold 38px/79px sans-serif;
+	float: left;
+	margin-left: 25px;
+	text-shadow: 1px 1px 0 #000;
+	text-decoration: none;
+}
+
+#site-title a:hover {
+	color: #eee;
+}
+
+#site-title img {
+	vertical-align: middle;
+}
 
 #site-description {
 	color: #b8b5af;
-	font: normal italic 15px Georgia, "Times New Roman", Times, serif;
+	font: normal italic 15px/82px Georgia, serif;
 	float: left;
-	margin: 33px 0 0 20px;
+	margin-left: 20px;
 	text-shadow: 1px 1px 0 #000; 
 }
 	
@@ -398,6 +394,12 @@ hr { border-top: 1px #ccc solid; clear: both; height: 0; margin: 20px 0; }
 	#access .sub-menu .menu-item > a {
 		border-radius: 0;
 	}
+	
+	/* More levels */
+	#access .sub-menu .sub-menu {
+		top: 0;
+		left: 100%;	
+	}
 
 /**
  * Content
@@ -465,8 +467,7 @@ body.no-sidebar .entry-comments-number {
  * Featured section
  */
  
-#featured-section,
-#inner-slider {
+#featured-section {
 	width: 980px;
 	height: 310px;
 	margin: -60px 0 40px;
@@ -474,9 +475,11 @@ body.no-sidebar .entry-comments-number {
 }
 
 #inner-slider {
+	width: 980px;
 	height: 100% !important;
-	margin: 0;
+	margin-top: 30px;
 	overflow: hidden;
+	position: relative;
 }
 
 .singular #featured-section {
@@ -486,7 +489,7 @@ body.no-sidebar .entry-comments-number {
 
 #featured-section ul { list-style: none; margin: 0; position: relative; }
 
-#featured-section .slides li {
+#featured-section .slide {
 	float: left;
 	width: 960px;
 	height: 220px;
@@ -1479,19 +1482,19 @@ img.alignright {
 	}
 
 	/* Comment head */
-	.comment-header {
+	.comment-meta {
 		margin-bottom: 20px;
 		padding: 5px 0 5px 65px;
 		position: relative;
 	}
 	
-	.children .comment-header {
+	.children .comment-meta {
 		padding-left: 55px;
 	}
 	
 	/* Comment author */
 	.comment-author {
-		font: 15px 'Open Sans', Arial, sans-serif;
+		font: 15px 'Open Sans', sans-serif;
 	}
 	
 	.comment-author .avatar {
@@ -1510,7 +1513,7 @@ img.alignright {
 	}
 	
 	/* Comment meta */
-	.comment-meta {
+	.commentmetadata {
 		font: 12px 'Open Sans', Arial, sans-serif;
 		margin-top: 5px;
 	}

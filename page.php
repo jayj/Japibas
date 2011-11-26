@@ -4,7 +4,7 @@
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-        <div <?php post_class(); ?>>
+        <article <?php post_class(); ?>>
 
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
@@ -28,7 +28,7 @@
 
 			<?php edit_post_link( __( 'Edit', 'japibas' ), '<footer class="entry-meta">', '</footer> <!-- .entry-meta -->' ); ?>
 
-        </div> <!-- .post-<?php the_ID(); ?> -->
+        </article> <!-- .post-<?php the_ID(); ?> -->
 
 	<?php endwhile; ?>
 

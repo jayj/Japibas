@@ -10,7 +10,7 @@
 			$phrase = __( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'japibas' );
 
 			if ( is_active_sidebar( 'error-page-widgets' ) )
-				$phrase = __( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.', 'japibas' );
+				$phrase = __( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching or one of the links below can help.', 'japibas' );
         ?>
 
             <p><?php echo $phrase; ?></p>

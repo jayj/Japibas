@@ -52,7 +52,7 @@
     
 	<?php if ( have_posts() ) : ?>
         
-        <h3><?php printf( __( '%s\'s Latest Posts', 'japibas' ), get_the_author_meta( 'display_name', $user_id ) ); ?></h3>
+        <h3 class="assistive-text"><?php printf( __( '%s\'s Latest Posts', 'japibas' ), get_the_author_meta( 'display_name', $user_id ) ); ?></h3>
     
         <?php
             while ( have_posts() ) : the_post();
@@ -62,13 +62,14 @@
         
 	<?php else : ?>
 
-        <div id="post-0" class="post hentry no-results not-found">
-            <h2 class="entry-title"><?php printf( __( '%s hasn\'t written any posts yet', 'japibas' ), get_the_author_meta( 'display_name', $user_id ) ); ?></h2>
-
+        <article id="post-0" class="post hentry no-results not-found">
+        	<header class="entry-header">
+            	<h1 class="entry-title"><?php printf( __( '%s hasn\'t written any posts yet', 'japibas' ), get_the_author_meta( 'display_name', $user_id ) ); ?></h1>
+			</header> <!-- .entry-header -->
             <div class="entry-content">
                 <p><?php printf( __( 'Apologies, but the user %s hasn\'t written any posts yet for this site yet.', 'japibas'), get_the_author_meta( 'display_name', $user_id ) ); ?></p>
             </div> <!-- .entry-content -->
-        </div> <!-- #post-0 -->
+        </article> <!-- #post-0 -->
 
 	<?php endif; ?>
 

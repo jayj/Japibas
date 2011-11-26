@@ -8,7 +8,7 @@
     	endwhile;
 	?>
     
-    <div class="post hentry">
+    <article class="post hentry">
         <h3><?php _e( 'Not what you\'re looking for?', 'japibas' ); ?></h3>
         
         <div class="entry-content">
