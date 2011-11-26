@@ -16,9 +16,6 @@
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
     
-    <!-- Load Open Sans from Google Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,bold" rel="stylesheet" />
-    
     <?php
         /* Color scheme */
         /*$colorscheme = ( japibas_get_setting( 'color_scheme' ) ) ? japibas_get_setting( 'color_scheme' ) : 'green.css';	
@@ -43,9 +40,19 @@
 
     <header id="branding" role="banner">
 
-    	<?php /* @todo Header image */ ?>
         <hgroup>
-            <h1 id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+            <?php
+				// Get the site title, either by logo or by text
+				if ( $title = get_bloginfo( 'name' ) ) {
+					
+					// Get URL of the logo
+					$logo = japibas_get_logo( japibas_get_setting( 'logo' ) );
+
+					// Check if there's a header image, else return the blog name
+					$maybe_image = ( $logo ) ? '<span class="assistive-text">' . $title . '</span><img src="' . esc_url( $logo ) . '" alt="' . esc_attr( $title ) . '" />' : '<span>' . $title . '</span>';
+					echo '<h1 id="site-title"><a href="' . home_url() . '" title="' . esc_attr( $title ) . '" rel="home">' . $maybe_image . '</a></h1>';
+				}
+			?>
             <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
         </hgroup> 
 

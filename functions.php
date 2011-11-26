@@ -31,6 +31,9 @@ function jap_setup() {
 
 	/* Load JavaScript */
 	add_action( 'wp_enqueue_scripts', 'jap_enqueue_script' );
+	
+	/* Load Open Sans font */
+	add_action( 'wp_print_styles', 'palex_enqueue_open_sans' );
 
 	/* Sidebars */
 	add_action( 'widgets_init', 'jap_sidebars' );
@@ -83,9 +86,18 @@ function jap_enqueue_script() {
 	wp_enqueue_script( 'jquery' );
 	
 	if ( japibas_get_setting( 'slider_category' ) && ( is_home() || is_front_page() ) )
-		wp_enqueue_script( 'sudoSlider', get_template_directory_uri() . '/js/jquery.sudoSlider.min.js', array( 'jquery' ), '1.2.5', true );
+		wp_enqueue_script( 'sudoSlider', get_template_directory_uri() . '/js/jquery.sudoSlider.min.js', array( 'jquery' ), '2.1.6', true );
 
-	wp_enqueue_script( 'jap-theme', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '2.0', true );
+	wp_enqueue_script( 'japibas-theme', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '2.0', true );
+}
+
+/**
+ * Loads Open Sans from the Google Font API
+ *
+ * @since 2.0
+ */
+function palex_enqueue_open_sans() {
+	wp_enqueue_style( 'Open-Sans', 'http://fonts.googleapis.com/css?family=Open+Sans' );
 }
 
 /**
@@ -99,10 +111,10 @@ function jap_sidebars() {
 		'name' => __( 'Sidebar', 'japibas' ),
 		'id' => 'sidebar-widgets',
 		'description' => __( 'Widgets for the sidebar', 'japibas' ),
-		'before_widget' => '<div class="widget %2$s" id="%1$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_widget' => '<aside class="widget %2$s" id="%1$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	// Single post
@@ -110,8 +122,8 @@ function jap_sidebars() {
 		'name' => __( 'Single Post', 'japibas' ),
 		'id' => 'single-widgets',
 		'description' => __( 'These widgets will be displayed after the content on single posts.', 'japibas' ),
-		'before_widget' => '<div class="widget single-widget %2$s" id="%1$s">',
-		'after_widget' => '</div>',
+		'before_widget' => '<aside class="widget single-widget %2$s" id="%1$s">',
+		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
@@ -121,30 +133,30 @@ function jap_sidebars() {
 		'name' => __( 'Footer Area One', 'japibas' ),
 		'id' => 'footer-area-1',
 		'description' => __( 'An optional widget area for your site footer', 'japibas' ),
-		'before_widget' => '<div class="footer-widget %2$s" id="%1$s">',
-		'after_widget' => "</div>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_widget' => '<aside class="footer-widget %2$s" id="%1$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	register_sidebar( array(
 		'name' => __( 'Footer Area Two', 'japibas' ),
 		'id' => 'footer-area-2',
 		'description' => __( 'An optional widget area for your site footer', 'japibas' ),
-		'before_widget' => '<div class="footer-widget %2$s" id="%1$s">',
-		'after_widget' => "</div>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_widget' => '<aside class="footer-widget %2$s" id="%1$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	register_sidebar( array(
 		'name' => __( 'Footer Area Three', 'japibas' ),
 		'id' => 'footer-area-3',
 		'description' => __( 'An optional widget area for your site footer', 'japibas' ),
-		'before_widget' => '<div class="footer-widget %2$s" id="%1$s">',
-		'after_widget' => "</div>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_widget' => '<aside class="footer-widget %2$s" id="%1$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	// 404 page
@@ -152,8 +164,8 @@ function jap_sidebars() {
 		'name' => __( '404 Page', 'japibas' ),
 		'id' => 'error-page-widgets',
 		'description' => __( 'Widgets for the 404 error page', 'japibas' ),
-		'before_widget' => '<div class="widget %2$s" id="%1$s">',
-		'after_widget' => '</div>',
+		'before_widget' => '<aside class="widget %2$s" id="%1$s">',
+		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
@@ -288,30 +300,27 @@ add_filter( 'user_contactmethods', 'japibas_contactmethods', 10, 1 );
 
 /**
  * Template for comments and pingbacks.
+ *
  * Used as a callback by wp_list_comments() for displaying the comments.
+ *
+ * @since 1.0
  */
 function japibas_comment( $comment, $args, $depth ) {
-
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
 	?>
-
-		<li class="post pingback">
-			<p><?php _e( 'Pingback:', 'japibas' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'japibas' ), ' ' ); ?></p>
-
+	<li class="post pingback">
+		<p><?php _e( 'Pingback:', 'japibas' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'japibas' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
-		break;
+			break;
 		default :
 	?>
-
-        <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-
-            <div id="comment-<?php comment_ID(); ?>">
-
-                <div class="comment-header">
-                    <div class="comment-author vcard">
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
 						<?php
 							// Avatar size: 42px for normal comments, 32px for replies
                             $avatar_size = 42;
@@ -324,7 +333,7 @@ function japibas_comment( $comment, $args, $depth ) {
                         <?php printf( __( '%s <span class="says">says:</span>', 'japibas' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
                     </div> <!-- .comment-author .vcard -->
 
-                    <div class="comment-meta commentmetadata">
+                    <div class="commentmetadata">
                     	<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 							<?php
 								/* translators: 1: date, 2: time */
@@ -333,23 +342,23 @@ function japibas_comment( $comment, $args, $depth ) {
 						</a>
 						<?php edit_comment_link( __( '(Edit)', 'japibas' ), ' ' ); ?>
                     </div> <!-- .comment-meta .commentmetadata -->
-                </div> <!-- .comment-header -->
 
-                <?php if ( $comment->comment_approved == '0' ) : ?>
-                	<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'japibas' ); ?></em>
-                	<br />
-                <?php endif; ?>
+				<?php if ( $comment->comment_approved == '0' ) : ?>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'japibas' ); ?></em>
+					<br />
+				<?php endif; ?>
 
-                <div class="comment-body"><?php comment_text(); ?></div>
+			</footer>
 
-                <div class="reply">
-                	<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-                </div> <!-- .reply -->
+			<div class="comment-content"><?php comment_text(); ?></div>
 
-            </div> <!-- #comment-<?php comment_ID(); ?>  -->
+			<div class="reply">
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'japibas' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			</div><!-- .reply -->
+		</article><!-- #comment-## -->
 
 	<?php
-		break;
+			break;
 	endswitch;
 }
 
@@ -387,5 +396,3 @@ function japibas_paginate_links( $args = '' ) {
 	if ( $wp_query->max_num_pages > 1 )
 		echo '<div class="pagination clearfix">' . paginate_links( $pagination ) . '</div> <!-- .pagination -->';
 }
-
-?>
