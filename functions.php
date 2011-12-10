@@ -396,3 +396,30 @@ function japibas_paginate_links( $args = '' ) {
 	if ( $wp_query->max_num_pages > 1 )
 		echo '<div class="pagination clearfix">' . paginate_links( $pagination ) . '</div> <!-- .pagination -->';
 }
+
+/**
+ * Adds theme/plugin custom images sizes added with add_image_size() to the image uploader/editor.  This 
+ * allows users to insert these images within their post content editor.
+ *
+ * @since 2.0
+ * @param array $sizes Selectable image sizes.
+ * @return array $sizes
+ */
+function japibas_image_size_names_choose( $sizes ) {
+
+	/* Get all intermediate image sizes. */
+	$intermediate_sizes = get_intermediate_image_sizes();
+	$add_sizes = array();
+
+	/* Loop through each of the intermediate sizes, adding them to the $add_sizes array. */
+	foreach ( $intermediate_sizes as $size )
+		$add_sizes[$size] = $size;
+
+	/* Merge the original array, keeping it intact, with the new array of image sizes. */
+	$sizes = array_merge( $add_sizes, $sizes );
+
+	/* Return the new sizes plus the old sizes back. */
+	return $sizes;
+}
+
+add_filter( 'image_size_names_choose', 'japibas_image_size_names_choose' );

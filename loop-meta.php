@@ -26,10 +26,24 @@
 
 		</div> <!-- .loop-meta -->
         
-	<?php elseif ( is_singular() && function_exists( 'yoast_breadcrumb' ) ) : ?>
+	<?php elseif ( is_singular() && ! is_singular( 'attachment' ) && function_exists( 'yoast_breadcrumb' ) ) : ?>
     
     	<div class="loop-meta">
-        	<?php yoast_breadcrumb( '<p class="loop-description breadcrumb">', '</p>' ); ?>
+        	<?php
+				// Get the breaccrumb, except for in attachment pages
+            	if ( ! is_singular( 'attachment' ) )
+					yoast_breadcrumb( '<p class="loop-description breadcrumb">', '</p>' );
+			?>
+        </div>
+        
+	<?php elseif ( is_singular( 'attachment' ) ) : ?>
+        
+        <div class="loop-meta">
+            <nav id="nav-attachment">
+                <h3 class="assistive-text"><?php _e( 'Image navigation', 'japibas' ); ?></h3>
+                <span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous Image' , 'japibas' ) ); ?></span>
+                <span class="nav-next"><?php next_image_link( false, __( 'Next Image &rarr;' , 'japibas' ) ); ?></span>
+            </nav> <!-- #nav-attachment -->
         </div>
 
 	<?php elseif ( is_category() ) : ?>
