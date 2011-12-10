@@ -15,7 +15,7 @@
             <p><?php _e( 'Try searching again with some different keywords', 'japibas' ); ?></p>
             <?php get_search_form(); ?>
         </div> <!-- .entry-content -->
-    </div> <!-- .post -->
+    </article> <!-- .post -->
     
 	<?php japibas_paginate_links(); ?> 
     

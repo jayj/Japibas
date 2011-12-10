@@ -165,6 +165,7 @@ class Japibas_Related_Posts_Widget extends WP_Widget {
 			}
 			
 			$allposts = get_posts( array( 'include' => $related_posts, 'post_type' => 'post', 'post_status' => 'any' ) );
+
 			foreach( $allposts as $postinfo ) {
 				delete_post_meta( $postinfo->ID, 'related' );
 			}

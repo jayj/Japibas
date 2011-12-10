@@ -89,7 +89,7 @@ function japibas_color_schemes() {
 	$color_scheme_options = array(
 		'green' => array(
 			'value' => 'green',
-			'label' => __( 'Green', 'japibas' ),
+			'label' => __( 'Green (default)', 'japibas' ),
 			'thumbnail' => get_template_directory_uri() . '/images/green.png',
 			'default_link_color' => '#768c22',
 		)
@@ -505,30 +505,31 @@ add_action( 'wp_enqueue_scripts', 'japibas_enqueue_color_scheme' );
  */
 function japibas_print_link_color_style() {
 	$options = japibas_get_theme_options();
+	$get_color_schemes = japibas_color_schemes();
+	$current_color_scheme = $options['color_scheme'];
 	$link_color = $options['link_color'];
 
-	$default_options = japibas_get_default_theme_options();
-
-	// Don't do anything if the current link color is the default.
-	if ( $default_options['link_color'] == $link_color )
+	// Don't do anything if the current link color is the default color for the current scheme
+	if ( $get_color_schemes[$current_color_scheme]['default_link_color'] == $link_color )
 		return;
 ?>
 	<style>
 		/* Link color */
-		a/*,
+		a,
 		#site-title a:focus,
 		#site-title a:hover,
 		#site-title a:active,
 		.entry-title a:hover,
 		.entry-title a:focus,
-		.entry-title a:active,
-		.widget_japibas_ephemera .comments-link a:hover,
-		section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
-		section.recent-posts .other-recent-posts .comments-link a:hover,
-		.format-image footer.entry-meta a:hover,
-		#site-generator a:hover*/ {
-			color: <?php echo $link_color; ?>;
+		.entry-title a:active {
+			color: <?php echo esc_attr( $link_color ); ?>;
 		}
+		
+		.entry-title a:hover {
+			background: none;
+			text-shadow: none;
+		}
+		
 	</style>
 <?php
 }

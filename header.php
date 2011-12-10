@@ -58,7 +58,7 @@
 
         <nav id="access" role="navigation">
             <h3 class="assistive-text"><?php _e( 'Main menu', 'japibas' ); ?></h3>
-            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '' ) ); ?>
         </nav><!-- #access -->
 
     </header> <!-- #branding -->

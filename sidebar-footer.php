@@ -46,20 +46,20 @@
 
 <div id="footer-columns" class="<?php echo esc_attr( $class ); ?> clearfix">
 	<?php if ( is_active_sidebar( 'footer-area-1' ) ) : ?>
-	<div id="first-footer-col" class="widget-area" role="complementary">
-		<?php dynamic_sidebar( 'footer-area-1' ); ?>
-	</div> <!-- #first-footer-col .widget-area -->
+        <div id="first-footer-col" class="widget-area" role="complementary">
+            <?php dynamic_sidebar( 'footer-area-1' ); ?>
+        </div> <!-- #first-footer-col .widget-area -->
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'footer-area-2' ) ) : ?>
-	<div id="second-footer-col" class="widget-area" role="complementary">
-		<?php dynamic_sidebar( 'footer-area-2' ); ?>
-	</div> <!-- #second-footer-col .widget-area -->
+        <div id="second-footer-col" class="widget-area" role="complementary">
+            <?php dynamic_sidebar( 'footer-area-2' ); ?>
+        </div> <!-- #second-footer-col .widget-area -->
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'footer-area-3' ) ) : ?>
-	<div id="third-footer-col" class="widget-area" role="complementary">
-		<?php dynamic_sidebar( 'footer-area-3' ); ?>
-	</div> <!-- #third-footer-col .widget-area -->
+        <div id="third-footer-col" class="widget-area" role="complementary">
+            <?php dynamic_sidebar( 'footer-area-3' ); ?>
+        </div> <!-- #third-footer-col .widget-area -->
 	<?php endif; ?>
 </div><!-- #footer-columns -->

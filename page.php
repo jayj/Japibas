@@ -6,9 +6,9 @@
 
         <article <?php post_class(); ?>>
 
-	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-	</header> <!-- .entry-header -->
+            <header class="entry-header">
+                <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+            </header> <!-- .entry-header -->
 
             <?php
 				if ( ! post_password_required() )

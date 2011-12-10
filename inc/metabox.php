@@ -11,12 +11,21 @@ function jap_meta_box( $object, $box ) { ?>
 
     <input type="hidden" name="japibas_meta_box_nonce" value="<?php echo wp_create_nonce( basename( __FILE__ ) ); ?>" />
     
-    <p>
-        <label for="japibas-thumbnail"><?php _e( 'Thumbnail', 'japibas' ); ?></label>
-        <br />
-        <input type="text" name="japibas-thumbnail" id="japibas-thumbnail" value="<?php echo esc_url( get_post_meta( $object->ID, 'thumbnail', true ) ); ?>" size="30" tabindex="30" style="width: 30%;" />
-        <span><strong>No need to use this</strong> if you're using the 'Featured Image' function</span>
-    </p>
+    <?php
+		// See if there's a value in the thumbnail custom field. If true, show the field to the user can edit it
+		$thumbnail = get_post_meta( $object->ID, 'thumbnail', true );
+		
+		if ( ! empty( $thumbnail ) ) {
+	?>
+        <p>
+            <label for="japibas-thumbnail"><?php _e( 'Thumbnail', 'japibas' ); ?></label>
+            <br />
+            <input type="text" name="japibas-thumbnail" id="japibas-thumbnail" value="<?php echo esc_url( get_post_meta( $object->ID, 'thumbnail', true ) ); ?>" size="30" tabindex="30" style="width: 30%;" />
+            <span><strong>No need to use this</strong> if you're using the 'Featured Image' function</span>
+        </p>
+    <?php
+		}
+	?>
     
 	<p>
         <label for="featured_image"><?php _e( 'Slider Image', 'japibas' ); ?></label>
