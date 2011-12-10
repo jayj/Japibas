@@ -423,3 +423,37 @@ function japibas_image_size_names_choose( $sizes ) {
 }
 
 add_filter( 'image_size_names_choose', 'japibas_image_size_names_choose' );
+
+/**
+ * Function for using a debug stylesheet when developing.  To develop with the debug stylesheet, 
+ * SCRIPT_DEBUG must be set to 'true' in the 'wp-config.php' file.  This will check if a 'style.dev.css'
+ * file is present within the theme folder and use it if it exists.  Else, it defaults to 'style.css'.
+ *
+ * @since 2.0
+ * @param string $stylesheet_uri The URI of the active theme's stylesheet.
+ * @param string $stylesheet_dir_uri The directory URI of the active theme's stylesheet.
+ * @return string $stylesheet_uri
+ */
+function japibas_debug_stylesheet( $stylesheet_uri, $stylesheet_dir_uri ) {
+
+	/* If SCRIPT_DEBUG is set to true and the theme supports 'dev-stylesheet'. */
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+
+		/* Remove the stylesheet directory URI from the file name. */
+		$stylesheet = str_replace( trailingslashit( $stylesheet_dir_uri ), '', $stylesheet_uri );
+
+		/* Change the stylesheet name to 'style.dev.css'. */
+		$stylesheet = str_replace( '.css', '.dev.css', $stylesheet );
+
+		/* If the stylesheet exists in the stylesheet directory, set the stylesheet URI to the dev stylesheet. */
+		if ( file_exists( trailingslashit( STYLESHEETPATH ) . $stylesheet ) )
+			$stylesheet_uri = trailingslashit( $stylesheet_dir_uri ) . $stylesheet;
+	}
+
+	/* Return the theme stylesheet. */
+	return $stylesheet_uri;
+}
+
+add_filter( 'stylesheet_uri', 'japibas_debug_stylesheet', 10, 2 );
+
+?>
