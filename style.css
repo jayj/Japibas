@@ -18,20 +18,13 @@ audio:not([controls]) { display: none; }
  */
 html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,cite,code,font,img,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}img{border:none}:focus{outline:0}table{border-collapse:collapse;border-spacing:0}.clearfix:before,.clearfix:after {content: ""; display: table;}.clearfix:after{clear: both;}.clearfix {*zoom: 1;}
 
+html, body { overflow-x: hidden; }
+@media all and (max-width: 1050px) { html, body { overflow-x: visible; } }
+
 body { 
 	background: #dad6d3;
 	color: #333;
 	font: 16px/1.8 Georgia, Cambria, serif;
-}
-
-body:before { /* The background image */
-	background: url(images/bg.png) repeat-x;
-	content: "";
-	display: block;
-	width: 100%; height: 200px;
-	position: absolute;
-	top: 0; left: 0;
-	z-index: -10;
 }
 
 #wrapper {
@@ -112,7 +105,9 @@ h6 {
 		color: #222;
 	} 
 	
-	.entry-title a:hover {
+	.entry-title a:hover,
+	.entry-title a:focus,
+	.entry-title a:active {
 		background: #568cbb;
 		color: #fff;
 		text-shadow: 0 1px 0 #3d719d;
@@ -287,13 +282,59 @@ hr { border-top: 1px #ccc solid; clear: both; height: 0; margin: 20px 0; }
  */
 
 #branding {
+	/* Dark, grey topbar */
+	background: #1f1e1c;
+	background: -webkit-linear-gradient(top, #313131, #1f1e1c);
+	border-bottom: 1px solid #171512;
+	
 	height: 79px;
 	position: relative;
 }
 
+.loop-meta {
+	/* The green bar in the top */
+	background: #8ca429;
+	background: -webkit-linear-gradient(left, #8ca429 0%, #b1c530 25%, #8ca429 100%);
+	border-top: 1px solid #a8c336;
+	border-bottom: 1px solid #7c9124;
+	width: 940px;
+	height: 90px;
+	padding: 15px 0 0 20px;
+	position: relative;
+}
+
+	/* Make it full width */
+	#branding:before,
+	#branding:after,
+	.loop-meta:before,
+	.loop-meta:after {
+		content: "";
+		width: 100%; height: 100%;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+	}
+
+	#branding:before,
+	#branding:after {
+		background: inherit;
+		border: inherit;
+	}
+	
+	.loop-meta:before,
+	.loop-meta:after {
+		background: #8ca429;
+		border: inherit;
+		box-shadow: 1px 1px 0 rgba(255,255,255, 0.4);
+		top: -1px;
+	}
+
+	#branding:before, .loop-meta:before { left: -100%; }
+	#branding:after, .loop-meta:after { right: -100%; }
+
+/* The site title */
 #site-title {
 	margin: 0;
-	
 }
 
 #site-title a {
@@ -328,7 +369,7 @@ hr { border-top: 1px #ccc solid; clear: both; height: 0; margin: 20px 0; }
 
 #access {
 	position: absolute;
-	bottom: 1px; right: 0;
+	bottom: -1px; right: 0;
 }
 
 #access .menu {
@@ -359,15 +400,16 @@ hr { border-top: 1px #ccc solid; clear: both; height: 0; margin: 20px 0; }
 
 #access .menu-item > a:hover, 
 #access .current-menu-item > a {
-	background: #95ac2b;
+	background: #9db32c;
 	border: 1px solid #b1ce3b;
 	border-bottom: none;
 	text-shadow: 1px 1px 0 #7f9526;
 	text-decoration: none;
 }
 
-#access .current-menu-item > a {
-	background: #9db32c;
+#access .current-menu-item {
+	bottom: -1px;
+	z-index: 2;
 }
 
 	/* Level 2 */
@@ -400,6 +442,13 @@ hr { border-top: 1px #ccc solid; clear: both; height: 0; margin: 20px 0; }
 		top: 0;
 		left: 100%;	
 	}
+	
+	/* IE7 fixes */
+	.ie7 #branding, .ie7 #access, .ie7 #access ul {
+		z-index: 5;
+	}
+
+	.ie7 #access .menu-item { z-index: 10; }
 
 /**
  * Content
@@ -422,11 +471,11 @@ hr { border-top: 1px #ccc solid; clear: both; height: 0; margin: 20px 0; }
 	position: relative;
 }
 
-.left-sidebar #content {
+.sidebar-left #content {
 	float: right;
 }
 
-.left-sidebar #sidebar {
+.sidebar-left #sidebar {
 	float: left;
 }
 
@@ -519,6 +568,9 @@ body.no-sidebar .entry-comments-number {
 	float: left;
 	margin: 0 25px 0 0;
 	padding: 4px;
+	max-width: 96%;
+	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */ 
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */ 
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0, 0.15);
 	box-shadow: 0 0 10px rgba(0,0,0, 0.15);
 }
@@ -533,12 +585,18 @@ body.no-sidebar .entry-comments-number {
 	position: absolute;
 	bottom: 50px; left: 20px;
 }
+
 #featured-section .entry-title.full-image a:hover {
 	background: #eee;
 	background: rgba(255,255,255,0.8);
 	color: #222;
 	text-decoration: none;
 	text-shadow: 0 1px 1px rgba(255,255,255, 0.8);
+}
+
+#featured-section .single-slide img {
+	-webkit-box-shadow: none;
+	box-shadow: none;	
 }
 
 #featured-section .entry-summary {
@@ -609,27 +667,21 @@ body.no-sidebar .entry-comments-number {
 	}
 
 /* Breadcrumbs and loop-meta */
-.loop-meta {
-	background: #8ca429; /* Old browsers */
-	background: -moz-linear-gradient(left, #8ca429 0%, #b1c530 25%, #8ca429 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#8ca429), color-stop(25%,#b1c530), color-stop(100%,#8ca429)); /* Chrome, Safari4+ */
-	background: -webkit-linear-gradient(left, #8ca429 0%,#b1c530 25%,#8ca429 100%); /* Chrome10+, Safari5.1+ */
-	background: -o-linear-gradient(left, #8ca429 0%,#b1c530 25%,#8ca429 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left, #8ca429 0%,#b1c530 25%,#8ca429 100%); /* IE 10+ */
-	background: linear-gradient(left, #8ca429 0%,#b1c530 25%,#8ca429 100%); /* W3C */
-	width: 940px;
-	height: 90px;
-	padding: 15px 0 0 20px;
-}
-
 .page-title {
 	font-size: 21px;
 	font-weight: normal;
 	margin: 15px 0 6px;
 }
 
-.loop-meta.has-archive-description .page-title {
-	margin-top: 0;	
+.no-slider .loop-meta.has-archive-description .page-title {
+	margin-bottom: 0;
+	position: relative;
+	top: -15px;
+}
+
+.no-slider .loop-meta.has-archive-description .loop-description {
+	position: relative;
+	top: -5px;
 }
 
 .page-title span {
@@ -676,6 +728,22 @@ body.no-sidebar .entry-comments-number {
 	.author-meta .loop-description {
 		line-height: 28px;	
 	}
+	
+/* Attachment navigation */
+#nav-attachment {
+	width: 600px;
+	padding: 0 20px;
+	position: absolute;
+	top: 20px; left: 0;
+}
+
+#nav-attachment .nav-previous {
+	float: left;
+}
+
+#nav-attachment .nav-next {
+	float: right;
+}
 
 /**
  * Post
@@ -758,7 +826,7 @@ body.singular .entry-meta {
 	box-shadow: -2px 0px 5px rgba(255,255,255, 0.3);
 }
 
-.entry-date a:hover {
+.entry-date > a:hover {
 	background: #242322;
 	text-decoration: none;
 }
@@ -770,7 +838,7 @@ body.singular .entry-meta {
 	margin-bottom: 5px;
 }
 
-.left-sidebar .entry-date {
+.sidebar-left .entry-date > a {
 	border-radius: 0 5px 5px 0;
 	left: auto; right: -51px;
 }
@@ -841,6 +909,31 @@ body.singular .entry-meta {
 	.entry-comments-number:active {
 		box-shadow: inset 0 1px 3px rgba(0,0,0, 0.3);
 	}
+	
+/* Pagination for paged posts and pages */
+.page-link {
+	clear: both;
+	display: block;
+	font: 14px 'Open Sans', serif;
+	padding-top: 20px;
+}
+
+.page-link a {
+	background: #eee;
+	color: #373737;
+	margin: 0;
+	padding: 4px 6px;
+	text-decoration: none;
+}
+
+.page-link a:hover {
+	background: #888;
+	color: #fff;
+}
+
+.page-link span {
+	margin-right: 8px;
+}
 	
 /**
  * Post formats
@@ -1147,7 +1240,7 @@ a:active img[class*="wp-image-"] {
 }
 
 img[class*="wp-image-"],
-.attachment-image img {
+.entry-attachment img {
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */ 
 }
 
@@ -1310,15 +1403,19 @@ img.alignright {
 	
 	.widget_japibas_related_posts li {
 		background: #fff;
+		border: 1px solid #e7e7e7;
 		border-radius: 3px;
-		width: 100px; height: 100px;
+		width: 108px; height: 108px;
 		float: left;
-		margin: 0 15px 15px 0;
+		margin: 0 14px 14px 0;
 		padding: 3px;
 		overflow: hidden;
 		text-align: center;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 		-webkit-box-shadow: 0 0 5px rgba(0,0,0, 0.15);
-		box-shadow: 0 0 5px rgba(0,0,0, 0.15);
+		xbox-shadow: 0 0 5px rgba(0,0,0, 0.15);
 	}
 	
 	.widget_japibas_related_posts li:nth-of-type(5n) {
@@ -1342,6 +1439,11 @@ img.alignright {
 	.widget_japibas_related_posts a:hover {
 		background: #f7f7f7;
 		text-decoration: none;
+	}
+	
+	.widget_japibas_related_posts img {
+		max-width: 100%;
+		display: block;	
 	}
 	
 	.widget_japibas_related_posts span {
@@ -1516,6 +1618,10 @@ img.alignright {
 	.commentmetadata {
 		font: 12px 'Open Sans', Arial, sans-serif;
 		margin-top: 5px;
+	}
+	
+	.commentmetadata a {
+		color: #333;	
 	}
 	
 	/* Count comments and give them a number */
@@ -1776,27 +1882,27 @@ input[type="search"]::-webkit-search-decoration {
 	.error, .warning, .download, .success, .tip { padding: 5px 20px 5px 45px; border-left: none!important; border-right: none!important; }
 	
 	.error{
-		background: #ffebe8 url(images/icons/delete.png) no-repeat 15px center;
+		background: #ffebe8 url(images/delete.png) no-repeat 15px center;
 		border: 2px solid #C00;
 	}
 	.warning {
-		background: #fff6bf url(images/icons/exclamation.png) no-repeat 15px center;
+		background: #fff6bf url(images/exclamation.png) no-repeat 15px center;
 		border: 2px solid #ffd324;
 	}
 	.download {
-		background: url(images/icons/disk.png) no-repeat 15px center;
+		background: url(images/disk.png) no-repeat 15px center;
 		border: 2px solid #b5d4fe;
 	}
 	.success {
-		background: #e7f7d3 url(images/icons/accept.png) no-repeat 15px center;
+		background: #e7f7d3 url(images/accept.png) no-repeat 15px center;
 		border: 2px solid #6c3;
 	}
 	.tip {
-		background: url(images/icons/information.png) no-repeat 15px center;
+		background: url(images/information.png) no-repeat 15px center;
 		border: 2px solid #b5d4fe;
 	}
 	
 	.nopassword {
-		background: #fff6bf url(images/icons/lock.png) no-repeat 10px center;
-		padding: 25px 25px 25px 70px;
+		background: #fff6bf url(images/lock.png) no-repeat 10px center;
+		padding: 25px 25px 25px 80px;
 	}
