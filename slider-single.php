@@ -20,7 +20,7 @@
 		}
         
         foreach ( $featured_image as $image ) {
-            $feature_size[] = getimagesize( esc_url( $image ) );
+            $feature_size[] = @getimagesize( esc_url( $image ) );
         }
         
         // If the size fills the entire slide, hide the content
