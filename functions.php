@@ -97,7 +97,7 @@ function jap_enqueue_script() {
  * @since 2.0
  */
 function palex_enqueue_open_sans() {
-	wp_enqueue_style( 'Open-Sans', 'http://fonts.googleapis.com/css?family=Open+Sans' );
+	wp_enqueue_style( 'Open-Sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700' );
 }
 
 /**
@@ -181,19 +181,30 @@ function jap_sidebars() {
  */
 function japibas_body_class( $classes ) {
 
+	$options = japibas_get_theme_options();
+
 	if ( is_singular() )
 		$classes[] = 'singular';
 
+	// Slider
 	if ( japibas_get_setting( 'slider_category' ) && ( is_home() || is_front_page() || is_single() ) )
 		$classes[] = 'slider';
 	else
 		$classes[] = 'no-slider';
 	
-	if ( ! japibas_get_setting( 'slider_category' ) )
+	// Slider is disabled
+	if ( ! $options['slider_category'] )
 		$classes[] = 'slider-disabled';
 		
+	// No sidebar on 404 pages
 	if ( is_404() )
 		$classes[] = 'no-sidebar';
+	
+	// Add the layout classes
+	$classes[] = sanitize_html_class( $options['theme_layout'] );
+	
+	// Add current color scheme
+	$classes[] = 'color-scheme-' . sanitize_html_class( $options['color_scheme'] );
 
 	return $classes;
 }
@@ -446,7 +457,7 @@ function japibas_debug_stylesheet( $stylesheet_uri, $stylesheet_dir_uri ) {
 		$stylesheet = str_replace( '.css', '.dev.css', $stylesheet );
 
 		/* If the stylesheet exists in the stylesheet directory, set the stylesheet URI to the dev stylesheet. */
-		if ( file_exists( trailingslashit( STYLESHEETPATH ) . $stylesheet ) )
+		if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $stylesheet ) )
 			$stylesheet_uri = trailingslashit( $stylesheet_dir_uri ) . $stylesheet;
 	}
 

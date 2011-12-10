@@ -19,14 +19,24 @@ a,
 #branding {
 	/* Dark, grey topbar */
 	background: #1f1e1c;
+	background: -webkit-gradient(linear, left top, left bottom, from(#313131), to(#1f1e1c));
 	background: -webkit-linear-gradient(top, #313131, #1f1e1c);
+	background: -moz-linear-gradient(top, #313131, #1f1e1c);
+	background: -o-linear-gradient(top, #313131, #1f1e1c);
+	background: -ms-linear-gradient(top, #313131, #1f1e1c);
+	background: linear-gradient(top, #313131, #1f1e1c);
 	border-bottom: 1px solid #171512;
 }
 
 .loop-meta {
 	/* The blue bar in the top */
-	background: #8ca429; /* Old browsers */
+	background: #2666a3; /* Old browsers */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #2666a3), color-stop(25%, #538dc5), color-stop(100%, #2666a3));
 	background: -webkit-linear-gradient(left, #2666a3 0%, #538dc5 25%, #2666a3 100%);
+	background: -moz-linear-gradient(left, #2666a3 0%, #538dc5 25%, #2666a3 100%);
+	background: -o-linear-gradient(left, #2666a3 0%, #538dc5 25%, #2666a3 100%);
+	background: -ms-linear-gradient(left, #2666a3 0%, #538dc5 25%, #2666a3 100%);
+	background: linear-gradient(left, #2666a3 0%, #538dc5 25%, #2666a3 100%);
 	border-top: 1px solid #3790ec;
 	border-bottom: 1px solid #236099;
 }
@@ -41,6 +51,7 @@ a,
 .loop-meta:after {
 	background: #2666a3;
 	border: inherit;
+	-webkit-box-shadow: 1px 1px 0 rgba(255,255,255, 0.4);
 	box-shadow: 1px 1px 0 rgba(255,255,255, 0.4);
 }
 
@@ -72,6 +83,11 @@ a,
 	background: #3a78b2;
 }
 
+.ie #access .menu-item > a:hover, 
+.ie #access .current-menu-item > a {
+	background: #2666a3;
+}
+
 /* Entry titles */
 .entry-title a:hover,
 .entry-title a:focus,
@@ -84,7 +100,12 @@ a,
 .more-link, 
 input[type="submit"] { 
 	background: #474747; /* Old browsers */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #518cc4), color-stop(100%, #2666a3));
 	background: -webkit-linear-gradient(top, #518cc4 0%, #2666a3 100%);
+	background: -moz-linear-gradient(top, #518cc4 0%, #2666a3 100%);
+	background: -o-linear-gradient(top, #518cc4 0%, #2666a3 100%);
+	background: -ms-linear-gradient(top, #518cc4 0%, #2666a3 100%);
+	background: linear-gradient(top, #518cc4 0%, #2666a3 100%);
 	border: 1px solid #194a78;
 	color: #fff;
 	text-shadow: 1px 1px 0 #14304c;
@@ -94,8 +115,13 @@ input[type="submit"] {
 
 .more-link:hover,
 input[type="submit"]:hover {
-	background: #474747; /* Old browsers */
+	background: #518cc4; /* Old browsers */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #474747), color-stop(100%, #272727));
 	background: -webkit-linear-gradient(top, #474747 0%, #272727 100%);
+	background: -moz-linear-gradient(top, #474747 0%, #272727 100%);
+	background: -o-linear-gradient(top, #474747 0%, #272727 100%);
+	background: -ms-linear-gradient(top, #474747 0%, #272727 100%);
+	background: linear-gradient(top, #474747 0%, #272727 100%);
 	border: 1px solid #171512;
 	text-shadow: 1px 1px 0 #111;
 	-webkit-box-shadow: inset 0 1px 1px #989898;

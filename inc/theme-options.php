@@ -537,21 +537,6 @@ function japibas_print_link_color_style() {
 add_action( 'wp_head', 'japibas_print_link_color_style' );
 
 /**
- * Adds Japibas layout classes to the array of body classes.
- *
- * @since Japibas 2.0
- */
-function japibas_layout_classes( $classes ) {
-	$options = japibas_get_theme_options();
-
-	$classes[] = sanitize_html_class( $options['theme_layout'] );
-
-	return $classes;
-}
-
-add_filter( 'body_class', 'japibas_layout_classes' );
-
-/**
  * Returns the url of the logo
  *
  * @since Japibas 2.0

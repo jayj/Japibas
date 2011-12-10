@@ -3,7 +3,7 @@
 <div id="content">
 
     <?php
-		// Exclude categories entered in the theme optionss
+		// Exclude categories entered in the theme options
 		global $wp_query;
 
 		query_posts(
