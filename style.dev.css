@@ -1204,9 +1204,15 @@ body.singular .entry-meta {
 	font: 15px 'Open Sans', sans-serif;
 	margin: 40px 0 20px;
 	padding: 20px;
+	display: block;
 	
-	display:block;display:-webkit-box;display:-moz-box;display:box;
+	/* Old flexbox spec */
+	display:-webkit-box;display:-moz-box;display:box;
 	-webkit-box-pack:center;-moz-box-pack:center;box-pack:center;
+	
+	/* New flexbox spec */
+	/*display:-webkit-flexbox;display:-moz-flexbox;display:flexbox;
+	-webkit-flex-pack:center;-moz-flex-pack:center;flex-pack:center;*/
 }
 
 .pagination ul { margin: 0; list-style: none; }
@@ -1466,7 +1472,7 @@ img.alignright {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		-webkit-box-shadow: 0 0 5px rgba(0,0,0, 0.15);
-		xbox-shadow: 0 0 5px rgba(0,0,0, 0.15);
+		box-shadow: 0 0 5px rgba(0,0,0, 0.15);
 	}
 	
 	.widget_japibas_related_posts li:nth-of-type(5n) {
@@ -1474,6 +1480,7 @@ img.alignright {
 	}
 	
 	.widget_japibas_related_posts a {
+		display: block;
 		width: 100%; height: 100%;	
 
 		-webkit-transition: background 150ms ease-in;
@@ -1481,10 +1488,18 @@ img.alignright {
 		transition: background 150ms ease-in;
 		
 		/* Horizontal and vertical center the text */
-		display:block;display:-webkit-box;display:-moz-box;display:box;
+		
+		/* Old spec */
+		display:-webkit-box;display:-moz-box;display:box;
 		-webkit-box-orient:horizontal;-webkit-box-pack:center;-webkit-box-align:center;
 		-moz-box-orient:horizontal;-moz-box-pack:center;-moz-box-align:center;
 		box-orient:horizontal;box-pack:center;box-align:center;
+		
+		/* New spec */
+		/*display:-webkit-flexbox;display:-moz-flexbox;display:flexbox;
+		-webkit-flex-orient:horizontal;-webkit-flex-pack:center;-webkit-flex-align:center;
+		-moz-flex-orient:horizontal;-moz-flex-pack:center;-moz-flex-align:center;
+		flex-orient:horizontal;flex-pack:center;flex-align:center;*/
 	}
 	
 	.widget_japibas_related_posts a:hover {
@@ -1931,7 +1946,7 @@ input[type="search"]::-webkit-search-decoration {
 /* Misc */
 
 	/* Errors, warnings and so on - Example usage: <p class="error">Error! Message</p> */
-	.error, .warning, .download, .success, .tip { padding: 5px 20px 5px 45px; border-left: none!important; border-right: none!important; }
+	.error, .warning, .download, .success, .tip { padding: 5px 20px 5px 45px; border-left: none !important; border-right: none !important; }
 	
 	.error{
 		background: #ffebe8 url(images/delete.png) no-repeat 15px center;
