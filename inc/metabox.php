@@ -47,7 +47,7 @@ function jap_meta_box_save( $post_id, $post ) {
 	$post_type = get_post_type_object( $post->post_type );
 
 	/* Check if the current user has permission to edit the post. */
-	if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) )
 		return $post_id;
 
 	$meta = array(

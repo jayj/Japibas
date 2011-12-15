@@ -3,7 +3,6 @@ jQuery(document).ready(function($) {
 	/**
 	 * Slider
 	 */
-
 	if ( typeof ( jQuery().sudoSlider ) == 'function' ) {
 		var sudoSlider = $("#featured-section #inner-slider").sudoSlider({
 			auto: false,
@@ -13,7 +12,7 @@ jQuery(document).ready(function($) {
 			numericAttr: 'id="feature-slider"'
 		});
 	}
-	 
+
 	 /**
 	 * Equal Heights In Rows
 	 * http://css-tricks.com/equal-height-blocks-in-rows/
@@ -26,7 +25,6 @@ jQuery(document).ready(function($) {
 		currentDiv = 0;
 
 	$('.not-found-widgets .widget').each(function() {
-
 		$el = $(this);
 		topPosition = $el.position().top;
 
@@ -35,7 +33,7 @@ jQuery(document).ready(function($) {
 			for (currentDiv = 0; currentDiv < rowDivs.length ; currentDiv++) {
 				rowDivs[currentDiv].height(currentTallest);
 			}
-			
+
 			// set the variables for the new row
 			rowDivs.length = 0; // empty the array
 			currentRowStart = topPosition;
@@ -52,5 +50,4 @@ jQuery(document).ready(function($) {
 			rowDivs[currentDiv].height(currentTallest);
 		}
 	});
-
 });

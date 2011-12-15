@@ -109,7 +109,7 @@ function japibas_color_schemes() {
 		);
 	}
 
-	return $color_scheme_options;
+	return apply_filters( 'japibas_color_schemes', $color_scheme_options );
 }
 
 /**
@@ -136,7 +136,7 @@ function japibas_layouts() {
 		),
 	);
 
-	return $layout_options;
+	return apply_filters( 'japibas_layout_options', $layout_options );
 }
 
 /**
@@ -167,9 +167,9 @@ function japibas_logos() {
 				'description' => sprintf( __( 'Logo.png from the Japibas %s color scheme images folder', 'japibas' ), $data['name'] )
 			);
 	}
-	
+
 	// If the user is using a child theme, add the logo.png from that as well
-	if ( is_child_theme() && file_exists( CHILD_THEME_DIR . '/images/logo.png' ) )
+	if ( is_child_theme() && file_exists( get_stylesheet_directory() . '/images/logo.png' ) )
 		$logos['japibas-childtheme-logo'] = array(
 				'url' => CHILD_THEME_URI . '/images/logo.png',
 				'thumbnail_url' => CHILD_THEME_URI . '/images/logo.png',
@@ -429,6 +429,8 @@ function japibas_theme_options_render_page() { ?>
             </tr>
 
         </table>
+        
+        <?php do_action( 'japibas_after_theme_options' ); ?>
 
         <?php submit_button(); ?>
 
@@ -474,7 +476,7 @@ function japibas_theme_options_validate( $input ) {
 	$output['slider_posts'] = intval( $input['slider_posts'] );
 	$output['footer_text'] = $input['footer_text'];
 
-	return $output;
+	return apply_filters( 'japibas_validated_options', $output );
 }
 
 /**
@@ -490,8 +492,13 @@ function japibas_enqueue_color_scheme() {
 	if ( $color_scheme == 'green' )
 		return false;
 
+	// Load color schemes from the parent theme
 	if ( file_exists( get_template_directory() . '/colors/' . $color_scheme . '.css' ) )
 		wp_enqueue_style( $color_scheme, get_template_directory_uri() . '/colors/' . $color_scheme . '.css', array(), null );
+	
+	// Load styles from the child theme
+	if ( is_child_theme() && file_exists( get_stylesheet_directory() . '/colors/' . $color_scheme . '.css' ) )
+		wp_enqueue_style( $color_scheme, get_stylesheet_directory() . '/colors/' . $color_scheme . '.css', array(), null );
 }
 
 add_action( 'wp_enqueue_scripts', 'japibas_enqueue_color_scheme' );
