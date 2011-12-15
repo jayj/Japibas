@@ -6,7 +6,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 584;
 
-add_action( 'after_setup_theme', 'jap_setup' );
+add_action( 'after_setup_theme', 'japibas_setup' );
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -16,51 +16,49 @@ add_action( 'after_setup_theme', 'jap_setup' );
  *
  * @since 2.0
  */
-function jap_setup() {
+function japibas_setup() {
 
 	define( 'THEMEVERSION', '2.0' );
-	
+
 	$template_directory = get_template_directory();
 
 	add_custom_background();
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'japibas' ) );
 
-	/* Load JavaScript */
-	add_action( 'wp_enqueue_scripts', 'jap_enqueue_script' );
-	
-	/* Load Open Sans font */
-	add_action( 'wp_print_styles', 'palex_enqueue_open_sans' );
+	/* Load JavaScript and CSS styles */
+	add_action( 'wp_enqueue_scripts', 'japibas_enqueue_scripts' );
 
 	/* Sidebars */
-	add_action( 'widgets_init', 'jap_sidebars' );
+	add_action( 'widgets_init', 'japibas_sidebars' );
 
 	/* Add new image sizes */
 	add_image_size( 'small', 100, 100, true );
 	add_image_size( 'slider', 480, 220, true );
 	add_image_size( 'slider-large', 920, 220, true );
 
-	/* Load the Get the Image extension */
+	/* Load the "Get the Image" extension */
 	include( $template_directory . '/inc/get-the-image.php' );
-	
+
 	/* Load the shortcodes */
 	include( $template_directory . '/inc/shortcodes.php' );
 
 	/* Load custom widgets */
 	require( $template_directory . '/inc/widgets.php' );
-	
+
 	/* Load up the theme options page and related code */
 	require( $template_directory . '/inc/theme-options.php' );
-	
-	/* Load the editor metaboxes */
-	if ( is_admin() )
-		require_once( $template_directory . '/inc/metabox.php' );
 
-	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
-	
+	/* Load metaboxes and upgrade functionality */
+	if ( is_admin() ) {
+		require_once( $template_directory . '/inc/metabox.php' );
+		require_once($template_directory . '/inc/upgrade.php' );
+	}
+
 	/* Remove default gallery style */
 	add_filter( 'use_default_gallery_style', '__return_false' );
 
@@ -68,12 +66,12 @@ function jap_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 */
-/*	load_theme_textdomain( 'japibas', $template_directory . '/languages' );
+	load_theme_textdomain( 'japibas', $template_directory . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = $template_directory . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );*/
+		require_once( $locale_file );
 
 }
 
@@ -82,31 +80,29 @@ function jap_setup() {
  *
  * @since 2.0
  */
-function jap_enqueue_script() {
+function japibas_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
-	
+
+	// Load slider script
 	if ( japibas_get_setting( 'slider_category' ) && ( is_home() || is_front_page() ) )
 		wp_enqueue_script( 'sudoSlider', get_template_directory_uri() . '/js/jquery.sudoSlider.min.js', array( 'jquery' ), '2.1.6', true );
 
+	// Load the theme JS
 	wp_enqueue_script( 'japibas-theme', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '2.0', true );
-}
 
-/**
- * Loads Open Sans from the Google Font API
- *
- * @since 2.0
- */
-function palex_enqueue_open_sans() {
+	// Load Open Sans font
 	wp_enqueue_style( 'Open-Sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700' );
 }
 
 /**
  * Register widgetized areas, including one sidebar, a 404 page, single post and four column widget-ready footer.
  */
-function jap_sidebars() {
+function japibas_sidebars() {
 
+	// Register the Related Posts widget
 	register_widget( 'Japibas_Related_Posts_Widget' );
 
+	// Sidebar
 	register_sidebar( array (
 		'name' => __( 'Sidebar', 'japibas' ),
 		'id' => 'sidebar-widgets',
@@ -172,10 +168,7 @@ function jap_sidebars() {
 }
 
 /**
- * Body classes
- *
- * Adds extra body classes, such as the browser,
- * if it's a singular page, and if the slider is disabled
+ * Add extra body classes
  *
  * @since 1.0
  */
@@ -183,6 +176,7 @@ function japibas_body_class( $classes ) {
 
 	$options = japibas_get_theme_options();
 
+	// Is it a singular page? (posts, pages, attachments)
 	if ( is_singular() )
 		$classes[] = 'singular';
 
@@ -191,18 +185,18 @@ function japibas_body_class( $classes ) {
 		$classes[] = 'slider';
 	else
 		$classes[] = 'no-slider';
-	
+
 	// Slider is disabled
 	if ( ! $options['slider_category'] )
 		$classes[] = 'slider-disabled';
-		
+
 	// No sidebar on 404 pages
 	if ( is_404() )
 		$classes[] = 'no-sidebar';
-	
+
 	// Add the layout classes
 	$classes[] = sanitize_html_class( $options['theme_layout'] );
-	
+
 	// Add current color scheme
 	$classes[] = 'color-scheme-' . sanitize_html_class( $options['color_scheme'] );
 
