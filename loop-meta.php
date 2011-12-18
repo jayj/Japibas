@@ -18,16 +18,16 @@
 
 			<?php if ( ! is_front_page() ) { ?>
                 <h1 class="page-title"><span><?php echo get_post_field( 'post_title', $wp_query->get_queried_object_id() ); ?></span></h1>
-    
+
                 <div class="loop-description">
                     <?php echo apply_filters( 'the_excerpt', get_post_field( 'post_excerpt', $wp_query->get_queried_object_id() ) ); ?>
                 </div> <!-- .loop-description -->
             <?php } ?>
 
 		</div> <!-- .loop-meta -->
-        
+
 	<?php elseif ( is_singular() && ! is_singular( 'attachment' ) && function_exists( 'yoast_breadcrumb' ) ) : ?>
-    
+
     	<div class="loop-meta">
         	<?php
 				// Get the breaccrumb, except for in attachment pages
@@ -35,9 +35,9 @@
 					yoast_breadcrumb( '<p class="loop-description breadcrumb">', '</p>' );
 			?>
         </div>
-        
+
 	<?php elseif ( is_singular( 'attachment' ) ) : ?>
-        
+
         <div class="loop-meta">
             <nav id="nav-attachment">
                 <h3 class="assistive-text"><?php _e( 'Image navigation', 'japibas' ); ?></h3>
@@ -47,7 +47,7 @@
         </div>
 
 	<?php elseif ( is_category() ) : ?>
-		
+
 		<?php $category_description = category_description(); ?>
 
 		<div class="loop-meta <?php if ( ! empty( $category_description ) ) echo 'has-archive-description'; ?>">
@@ -73,7 +73,7 @@
 			</div> <!-- .loop-description -->
 
 		</div> <!-- .loop-meta -->
-        
+
 	<?php elseif ( is_tax( 'post_format' ) ) : ?>
 
     	<?php $post_format_description = term_description( '', get_query_var( 'taxonomy' ) ); ?>
@@ -129,10 +129,10 @@
 					</p> <!-- .user-bio -->
 				<?php } ?>
 			</div> <!-- .loop-description -->
-            
+
             <div class="author-profiles">
             	<?php printf( __( 'Find %s on:', 'japibas' ), '<span class="fn n">' . $display_name . '</span>' ); ?>
-                
+
                 <?php
 					/**
 					 * Get the authors social profiles
@@ -143,49 +143,49 @@
 					$social['twitter'] = get_the_author_meta( 'twitter', $user_id );
 					$social['googleplus'] = get_the_author_meta( 'google_profile', $user_id );
 					$social['flickr'] = get_the_author_meta( 'flickr', $user_id );
-					
+
 					/**
 					 * Try to figure out if the user has entered full links or just usernames
 					 * If they've entered usernames it changes it to full links
 					 */
 					foreach ( $social as $profile => $name ) :
-					
+
 						// Not empty and has no http:// found
 						if ( ! empty ( $name ) && strpos( $name, 'http://' ) === false ) {
 							if ( $profile == 'twitter' )
 								$social[$profile] = 'http://twitter.com/' . $name;
-								
+
 							if ( $profile == 'facebook' )
 								$social[$profile] = 'http://facebook.com/' . $name;
-								
+
 							if ( $profile == 'googleplus' )
 								$social[$profile] = 'https://plus.google.com/' . $name;
-								
+
 							if ( $profile == 'flickr' )
 								$social[$profile] = 'http://www.flickr.com/photos/' . $name;
 						}
-					
+
 					endforeach;
 				?>
-                
+
                 <ul class="social-profiles">
                 	<?php
 						if ( ! empty( $social['website'] ) )	
 							echo '<li class="social-profile-website"><a href="' . esc_url( $social['website'] ) . '" rel="me">Website</a></li>';
-							
+
 						if ( ! empty( $social['facebook'] ) )	
 							echo '<li class="social-profile-facebook"><a href="' . esc_url( $social['facebook'] ) . '" rel="me">Facebook</a></li>';
-							
+
 						if ( ! empty( $social['twitter'] ) )	
 							echo '<li class="social-profile-twitter"><a href="' . esc_url( $social['twitter'] ) . '" rel="me">Twitter</a></li>';
-							
+
 						if ( ! empty( $social['googleplus'] ) )	
 							echo '<li class="social-profile-googleplus"><a href="' . esc_url( $social['googleplus'] ) . '" rel="me">Google+</a></li>';
-							
+
 						if ( ! empty( $social['flickr'] ) )	
 							echo '<li class="social-profile-flickr"><a href="' . esc_url( $social['flickr'] ) . '" rel="me">Flickr</a></li>';
 					?>
-               </ul>     
+               </ul>
             </div> <!-- .author-profiles -->
 
 		</div> <!-- .author-meta -->
@@ -214,13 +214,13 @@
 		<div class="loop-meta has-archive-description">
         	<?php
 				$type = '';
-				
+
 				if ( is_month() )
 					$type = __( 'F Y', 'japibas' ); // Month, year
 				elseif ( is_year() )
 					$type = __( 'Y', 'japibas' ); // Year
 			?>
-        
+
 			<h1 class="page-title"><?php printf( __( 'Archives for %s', 'japibas' ), '<span>' . get_the_date( $type ) . '</span>' ); ?></h1>
 
 			<div class="loop-description">

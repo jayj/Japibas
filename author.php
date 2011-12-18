@@ -19,7 +19,7 @@
 		if ( ! empty( $comments ) ) :
 
 			echo '<div class="post hentry recentcomments">';
-			
+
 			echo '<h3>' . sprintf( __( '%s\'s Latest Comments', 'japibas' ), get_the_author_meta( 'display_name', $user_id ) ) . '</h3>';
 
 			echo '<ul>';
@@ -51,15 +51,15 @@
 	?>
     
 	<?php if ( have_posts() ) : ?>
-        
+
         <h3 class="assistive-text"><?php printf( __( '%s\'s Latest Posts', 'japibas' ), get_the_author_meta( 'display_name', $user_id ) ); ?></h3>
-    
+
         <?php
             while ( have_posts() ) : the_post();
                 get_template_part( 'loop', get_post_format() );
             endwhile;
         ?>
-        
+
 	<?php else : ?>
 
         <article id="post-0" class="post hentry no-results not-found">
@@ -74,10 +74,10 @@
 	<?php endif; ?>
 
 	<?php japibas_paginate_links(); ?> 
-    
+
 </section> <!-- #content -->
 
-<?php 
+<?php
 	get_sidebar(); 
 	get_footer();
 ?>

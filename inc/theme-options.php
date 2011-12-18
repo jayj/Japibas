@@ -87,14 +87,14 @@ add_action( 'admin_menu', 'japibas_theme_options_add_page' );
  */
 function japibas_color_schemes() {
 	
-	// Refresh the transient on the Theme Options page
+	// Refresh the option on the Theme Options page
 	if ( is_admin() ) {
 		global $pagenow;
 		if ( $pagenow == 'themes.php' )
 			delete_option( 'japibas_color_schemes' );
 	}
 
-	// The color schemes are stored in a transient that expire every 24 hours
+	// The color schemes are stored in an option
 	if ( false === ( $color_scheme_options = get_option( 'japibas_color_schemes' ) ) ) :
 
 		// Default color scheme
@@ -125,7 +125,7 @@ function japibas_color_schemes() {
 		if ( is_child_theme() ) {
 			foreach ( glob( get_stylesheet_directory() . '/colors/*.css' ) as $style ) :
 				$data = get_file_data( $style, array( 'name' => 'Name', 'slug' => 'Slug', 'description' => 'Description', 'linkcolor' => 'Link color' ), 'japibas' );
-				
+
 				$color_scheme_options[ sanitize_title( $data['slug'] ) ] = array(
 					'value' => sanitize_title( $data['slug'] ),
 					'label' => esc_html( $data['name'] ),
@@ -136,7 +136,7 @@ function japibas_color_schemes() {
 		}
 
 		// Store color schemes in the japibas_color_schemes option
-		update_option( 'japibas_color_schemes', $color_scheme_options ); 
+		update_option( 'japibas_color_schemes', $color_scheme_options );
 
 	endif;
 
@@ -183,14 +183,14 @@ function japibas_logos() {
 			'description' => __( 'Logo.png from the Japibas images folder', 'japibas' )
 		),
 	);
-	
+
 	// Look in each color scheme for a logo.png
 	foreach ( glob( get_template_directory() . '/colors/*.css' ) as $style ) { 
 		// Get the color scheme name and slug from the header
 		$data = get_file_data( $style, array( 'name' => 'Name', 'slug' => 'Slug' ), 'japibas' );
 		$slug = $data['slug'];
 		$logo = get_template_directory_uri() . '/colors/' . sanitize_title( $slug ) . '/logo.png';
-		
+
 		if ( file_exists( get_template_directory() . '/colors/' . sanitize_title( $slug ) . '/logo.png' ) )
 			$logos["{$slug}-logo"] = array(
 				'url' => $logo,
@@ -226,7 +226,7 @@ function japibas_get_default_theme_options() {
 		'slider_posts' => 5,
 		'footer_text' => '<p class="alignleft">' . __( 'Copyright &#169; [the-year] [site-link]', 'japibas' ) . '</p>' . "\n\n" . '<p class="alignright">' . __( 'Powered by [wp-link] and [theme-link]', 'japibas' ) . '</p>'
 	);
-	
+
 	// Change default footer text if it's a child theme
 	if ( is_child_theme() )
 		$default_theme_options['footer_text'] = '<p class="alignleft">' . __( 'Copyright &#169; [the-year] [site-link].', 'japibas' ) . '</p>' . "\n\n" . '<p class="alignright">' . __( 'Powered by [wp-link], [theme-link], and [child-link].', 'japibas' ) . '</p>';
@@ -310,7 +310,7 @@ function japibas_theme_options_render_page() { ?>
                     </fieldset>
                 </td>
             </tr>
-            
+
 			<tr valign="top" class="image-radio-option custom-logo"><th scope="row"><?php _e( 'Logo', 'japibas' ); ?></th>
                 <td>
                     <fieldset>
@@ -322,7 +322,7 @@ function japibas_theme_options_render_page() { ?>
                                 <span> No logo, just text </span>
                             </label>
 						</div>
-                            
+
 						<?php foreach ( japibas_logos() as $logo_name => $logo ) : ?>
                             <div class="layout">
                                 <label class="description">
@@ -460,7 +460,7 @@ function japibas_theme_options_render_page() { ?>
             </tr>
 
         </table>
-        
+
         <?php do_action( 'japibas_after_theme_options' ); ?>
 
         <?php submit_button(); ?>
@@ -486,7 +486,7 @@ function japibas_theme_options_validate( $input ) {
 	// Color scheme
 	if ( isset( $input['color_scheme'] ) && array_key_exists( $input['color_scheme'], japibas_color_schemes() ) )
 		$output['color_scheme'] = $input['color_scheme'];
-	
+
 	// Logo
 	if ( isset( $input['logo'] ) && array_key_exists( $input['logo'], array_merge( japibas_logos(), array( 'no-logo' => '' ) ) ) )
 		$output['logo'] = $input['logo'];
@@ -511,7 +511,7 @@ function japibas_theme_options_validate( $input ) {
 }
 
 /**
- * Enqueue the styles for the current color scheme.
+ * Enqueue the styles for the current color scheme
  *
  * @since Japibas 2.0
  */
@@ -526,10 +526,10 @@ function japibas_enqueue_color_scheme() {
 	// Load color schemes from the parent theme
 	if ( file_exists( get_template_directory() . '/colors/' . $color_scheme . '.css' ) )
 		wp_enqueue_style( $color_scheme, get_template_directory_uri() . '/colors/' . $color_scheme . '.css', array(), null );
-	
+
 	// Load styles from the child theme
 	if ( is_child_theme() && file_exists( get_stylesheet_directory() . '/colors/' . $color_scheme . '.css' ) )
-		wp_enqueue_style( $color_scheme, get_stylesheet_directory() . '/colors/' . $color_scheme . '.css', array(), null );
+		wp_enqueue_style( $color_scheme, get_stylesheet_directory_uri() . '/colors/' . $color_scheme . '.css', array(), null );
 }
 
 add_action( 'wp_enqueue_scripts', 'japibas_enqueue_color_scheme' );
@@ -562,12 +562,12 @@ function japibas_print_link_color_style() {
 		.entry-title a:active {
 			color: <?php echo esc_attr( $link_color ); ?>;
 		}
-		
+
 		.entry-title a:hover {
 			background: none;
 			text-shadow: none;
 		}
-		
+
 	</style>
 <?php
 }
@@ -595,6 +595,5 @@ function japibas_get_logo( $logo = null ) {
 
 	return $logos[ $logo ]['url'];
 }
-
 
 ?>

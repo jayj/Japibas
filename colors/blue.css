@@ -1,4 +1,4 @@
-/* 
+/*
  * Name: Blue
  * Slug: blue
  * Description: Blue color scheme for Japibas
@@ -46,7 +46,7 @@ a,
 	background: inherit;
 	border: inherit;
 }
-	
+
 .loop-meta:before,
 .loop-meta:after {
 	background: #2666a3;
@@ -71,7 +71,7 @@ a,
 	text-shadow: 1px 1px 0 #2b2b2b;
 }
 
-#access .menu-item > a:hover, 
+#access .menu-item > a:hover,
 #access .current-menu-item > a {
 	background: #3f7eba;
 	border: 1px solid #3790ec;
@@ -83,7 +83,7 @@ a,
 	background: #3a78b2;
 }
 
-.ie #access .menu-item > a:hover, 
+.ie #access .menu-item > a:hover,
 .ie #access .current-menu-item > a {
 	background: #2666a3;
 }
@@ -93,12 +93,12 @@ a,
 .entry-title a:focus,
 .entry-title a:active {
 	background: none;
-	text-shadow: none;	
+	text-shadow: none;
 }
 
 /* Buttons */
 .more-link, 
-input[type="submit"] { 
+input[type="submit"] {
 	background: #474747; /* Old browsers */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #518cc4), color-stop(100%, #2666a3));
 	background: -webkit-linear-gradient(top, #518cc4 0%, #2666a3 100%);

@@ -2,7 +2,7 @@
 
 <em>Japibas</em> is a popular free WordPress theme. 
 
-Version 2.0 is a completely rewritten of the 2009 version of the theme. The theme has gone HTML5, CSS and is much much better! 
+Version 2.0 is a completely rewritten of the 2009 version of the theme. The theme now uses HTML5, CSS3 and is much much better! 
 
 * Requires at least WordPress 3.3
 * Tested up to 3.3
@@ -15,7 +15,7 @@ Version 2.0 is a completely rewritten of the 2009 version of the theme. The them
 
 ## Features
 
-* Multiple color schemes (Green, Blue & Red already included – Easy to add more)
+* Multiple color schemes (Green, Blue & Red already included - Easy to add more)
 * HTML5
 * Small Theme Options page (yep, that's a feature)
 * Child theme friendly

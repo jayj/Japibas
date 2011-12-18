@@ -12,16 +12,10 @@
 
     <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	
+
     <!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
-    
-    <?php
-        /* Color scheme */
-        /*$colorscheme = ( japibas_get_setting( 'color_scheme' ) ) ? japibas_get_setting( 'color_scheme' ) : 'green.css';	
-        echo '<link rel="stylesheet" media="all" href="' . get_template_directory_uri() . '/css/styles/' . esc_attr( $colorscheme ) . '" />';*/
-    ?>
 
 <?php
 	/* Add some JavaScript to pages with the comment form
@@ -45,7 +39,7 @@
             <?php
 				// Get the site title, either by logo or by text
 				if ( $title = get_bloginfo( 'name' ) ) {
-					
+
 					// Get URL of the logo
 					$logo = japibas_get_logo( japibas_get_setting( 'logo' ) );
 

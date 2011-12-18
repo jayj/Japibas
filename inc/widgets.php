@@ -1,7 +1,6 @@
 <?php
 /**
- * Makes a widget for displaying Related Posts
- * based on category and post format
+ * Makes a widget for displaying Related Posts, based on category and post format
  */
 class Japibas_Related_Posts_Widget extends WP_Widget {
 
@@ -14,7 +13,7 @@ class Japibas_Related_Posts_Widget extends WP_Widget {
 		$widget_ops = array( 'classname' => 'widget_japibas_related_posts', 'description' => __( 'Use this widget to list related posts to the current viewed post based on category and post format', 'japibas' ) );
 		$this->WP_Widget( 'widget_japibas_related_posts', __( 'Japibas: Related Posts', 'japibas' ), $widget_ops );
 		$this->alt_option_name = 'widget_japibas_related_posts';
-		
+
 		add_action( 'save_post', array(&$this, 'flush_widget_cache' ) );
 		add_action( 'deleted_post', array(&$this, 'flush_widget_cache' ) );
 	}
@@ -27,39 +26,39 @@ class Japibas_Related_Posts_Widget extends WP_Widget {
 	 * @return void Echoes it's output
 	 **/
 	function widget( $args, $instance ) {
-		
+
 		// Only show it if it's a single post
 		if ( ! is_single() )
 			return;
-		
+
 		// Get the widget settings
 		extract( $args, EXTR_SKIP );
-		
+
 		$title = apply_filters( 'widget_title', $instance['title'] );
-		
+
 		// Get the number of posts - Default to 5
 		if ( ! isset( $instance['number'] ) )
-			$instance['number'] = '5';
-		
+			$instance['number'] = 5;
+
 		if ( ! $number = absint( $instance['number'] ) )
 			$number = 5;
-		
+
 		$post_id = get_the_ID();
-		
+
 		// Get related posts from post meta
 		$related_posts = get_post_meta( $post_id, 'related', false );
-		
+
 		// No related posts found, get them! */
 		if ( empty( $related_posts ) ) :
 			$this->get_related_posts( $post_id, $number );
-			
+	
 			// Get the post meta again
 			$related_posts = get_post_meta( $post_id, 'related', false );
 		endif; // empty( $related_posts )
-		
+
 
 		echo $before_widget;
-		
+
 		echo $before_title . $title . $after_title;
 	?>
 
@@ -86,25 +85,25 @@ class Japibas_Related_Posts_Widget extends WP_Widget {
                 	endif;
                 ?>
             </ul>
-        
+
 		<?php
 
 		echo $after_widget;
 	}
-	
+
 	function get_related_posts( $post_id, $number ) {
-		
+
 		// Put the categories in an array for related posts
 		$terms = get_the_terms( $post_id, 'category' );
 		$cat__in = array();
-		
+
 		foreach ( $terms as $term ) {
 			$cat__in[] = $term->slug;
 		}
-		
+
 		// Get the post format
 		$format = ( get_post_format() ) ? 'post-format-' . get_post_format() : '';
-		
+
 		// Fire up the query
 		$related_query = array( 
 			'posts_per_page' => $number,
@@ -125,11 +124,11 @@ class Japibas_Related_Posts_Widget extends WP_Widget {
 				),
 			)
 		);
-		
+
 		$related = new WP_Query( $related_query );
-		
+
 		if ( $related->have_posts() )  while ( $related->have_posts() ) : $related->the_post(); 
-		
+
 			// Add each related post in the 'related' custom field along with some basic information
 			add_post_meta( $post_id, 'related', array(
 				'permalink' => get_permalink(),
@@ -137,7 +136,7 @@ class Japibas_Related_Posts_Widget extends WP_Widget {
 				'post_id' => get_the_ID(),
 				'thumbnail' => get_post_thumbnail_id()
 			), false );
-			
+
 		endwhile; wp_reset_query();
 	}
 
@@ -157,13 +156,14 @@ class Japibas_Related_Posts_Widget extends WP_Widget {
 	function flush_widget_cache( $post_ID ) {
 
 		$related_meta = get_post_meta( $post_ID, 'related', false );
-		
+
+		// Delete the related post meta for all the related posts
 		if ( isset( $related_meta ) ) : 
 			$related_posts = array();
 			foreach ( $related_meta as $related ) {
 				$related_posts[] = $related['post_id'];
 			}
-			
+
 			$allposts = get_posts( array( 'include' => $related_posts, 'post_type' => 'post', 'post_status' => 'any' ) );
 
 			foreach( $allposts as $postinfo ) {

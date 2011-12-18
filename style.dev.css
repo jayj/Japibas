@@ -20,7 +20,7 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,cit
 html, body { overflow-x: hidden; }
 @media all and (max-width: 1050px) { html, body { overflow-x: visible; } }
 
-body { 
+body {
 	background: #dad6d3;
 	color: #333;
 	font: 16px/1.8 Georgia, Cambria, serif;
@@ -34,7 +34,7 @@ body {
 /**
  * Links
  */
- 
+
 a {
 	color: #768c22;
 	text-decoration: none;
@@ -100,11 +100,11 @@ h6 {
 		font-size: 32px;
 		margin: 0 50px 10px 0;
 	}
-	
+
 	.entry-title a {
 		color: #222;
 	} 
-	
+
 	.entry-title a:hover,
 	.entry-title a:focus,
 	.entry-title a:active {

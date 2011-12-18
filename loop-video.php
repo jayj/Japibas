@@ -5,7 +5,7 @@
 ?>
 
 <article <?php post_class(); ?>>
-    
+
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
@@ -29,7 +29,7 @@
     </div> <!-- .entry-content -->
 
     <div class="clear"></div>
-    
+
     <footer class="entry-meta">
             <?php
 				// The entry meta
@@ -42,7 +42,7 @@
 					esc_url( get_permalink() ),
 					esc_html( get_the_date() )
 				);
-                
+
                 edit_post_link( __( 'Edit', 'japibas' ), ' | ', '' );
             ?>
     </footer> <!-- .entry-meta -->

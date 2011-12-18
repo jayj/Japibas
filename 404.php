@@ -17,7 +17,7 @@
 
         	<?php get_search_form(); ?>
 
-			<?php 
+			<?php
 				// Widget ready 404 page - You can use widgets to put content here
 				if ( is_active_sidebar( 'error-page-widgets' ) ) {
 					echo '<div class="not-found-widgets clearfix">';

@@ -1,6 +1,6 @@
 <?php
 /**
- * The Footer widget areas.
+ * The Footer widget areas
  */
 ?>
 
@@ -16,7 +16,7 @@
 	)
 		return;
 	// If we get this far, we have widgets. Let do this.
-	
+
 	$count = 0;
 
 	if ( is_active_sidebar( 'footer-area-1' ) )
@@ -62,4 +62,4 @@
             <?php dynamic_sidebar( 'footer-area-3' ); ?>
         </div> <!-- #third-footer-col .widget-area -->
 	<?php endif; ?>
-</div><!-- #footer-columns -->
+</div> <!-- #footer-columns -->

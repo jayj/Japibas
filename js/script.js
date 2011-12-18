@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+(function($) {
 
 	/**
 	 * Slider
@@ -50,4 +50,4 @@ jQuery(document).ready(function($) {
 			rowDivs[currentDiv].height(currentTallest);
 		}
 	});
-});
+})(jQuery);

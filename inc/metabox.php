@@ -1,16 +1,21 @@
 <?php 
+/**
+ * Create the post meta box
+ *
+ * @since Japibas 2.0
+ */
 
-add_action( 'add_meta_boxes', 'jap_create_meta_box' );
-add_action( 'save_post', 'jap_meta_box_save', 10, 2 );
+add_action( 'add_meta_boxes', 'japibas_create_meta_box' );
+add_action( 'save_post', 'japibas_meta_box_save', 10, 2 );
 
-function jap_create_meta_box() {
-	add_meta_box( 'japibas-thumbnail-meta', __( 'Thumbnail', 'japibas' ), 'jap_meta_box', 'post', 'normal', 'high' );
+function japibas_create_meta_box() {
+	add_meta_box( 'japibas-thumbnail-meta', __( 'Thumbnail', 'japibas' ), 'japibas_meta_box', 'post', 'normal', 'high' );
 }
 
-function jap_meta_box( $object, $box ) { ?>
+function japibas_meta_box( $object, $box ) { ?>
 
     <input type="hidden" name="japibas_meta_box_nonce" value="<?php echo wp_create_nonce( basename( __FILE__ ) ); ?>" />
-    
+
     <?php
 		// See if there's a value in the thumbnail custom field. If true, show the field to the user can edit it
 		$thumbnail = get_post_meta( $object->ID, 'thumbnail', true );
@@ -37,8 +42,8 @@ function jap_meta_box( $object, $box ) { ?>
 <?php
 }
 
-function jap_meta_box_save( $post_id, $post ) {
-	
+function japibas_meta_box_save( $post_id, $post ) {
+
 	/* Verify that the post type supports the meta box and the nonce before preceding. */
 	if ( !isset( $_POST['japibas_meta_box_nonce'] ) || !wp_verify_nonce( $_POST['japibas_meta_box_nonce'], basename( __FILE__ ) ) )
 		return $post_id;
@@ -71,7 +76,7 @@ function jap_meta_box_save( $post_id, $post ) {
 		/* If there is no new meta value but an old value exists, delete it. */
 		elseif ( '' == $new_meta_value && $meta_value )
 			delete_post_meta( $post_id, $meta_key, $meta_value );
-			
+
 	endforeach;
 }
 

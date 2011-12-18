@@ -36,7 +36,7 @@
                         sprintf( esc_attr__( 'View all posts by %s', 'japibas' ), get_the_author() ),
                         get_the_author()
                     );
-					
+
 					edit_post_link( __( 'Edit', 'japibas' ), '<br />' );
                 ?>
             </div>
@@ -45,9 +45,9 @@
 				<?php
                 	// Check if there's any tags
 					$tags_list = get_the_tag_list( '', __( ', ', 'japibas' ) );
-					
+
 					$tags = ( $tags_list ) ? sprintf( '<br />' . __( 'Tagged %s', 'japibas' ), $tags_list ) : '';
-					
+
 					// The entry meta
 					printf( __( 'Posted in %1$s %2$s', 'japibas' ),
 						get_the_category_list( __( ', ', 'japibas' ) ),

@@ -14,7 +14,7 @@ add_action( 'after_setup_theme', 'japibas_setup' );
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * @since 2.0
+ * @since Japibas 2.0
  */
 function japibas_setup() {
 
@@ -78,7 +78,7 @@ function japibas_setup() {
 /**
  * Loads the theme JavaScript files
  *
- * @since 2.0
+ * @since Japibas 2.0
  */
 function japibas_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
@@ -123,7 +123,7 @@ function japibas_sidebars() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-	
+
 	// Footer
 	register_sidebar( array(
 		'name' => __( 'Footer Area One', 'japibas' ),
@@ -222,7 +222,7 @@ function japibas_url_grabber() {
  * Loads the Japibas theme settings once and allows the input of the specific field the user would
  * like to show.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @uses get_option() Gets an option from the database.
  * @param string $option The specific theme setting the user wants.
  * @return string|int|array $settings[$option] Specific setting asked for.
@@ -292,7 +292,7 @@ add_filter( 'get_the_excerpt', 'japibas_custom_excerpt_more' );
 /**
  * Add contact methods 
  *
- * @since 2.0
+ * @since Japibas 2.0
  */
 function japibas_contactmethods( $contactmethods ) {
 	$contactmethods['twitter'] = 'Twitter';
@@ -390,7 +390,7 @@ function japibas_paginate_links( $args = '' ) {
         'show_all' => false,
         'type' => 'list'
     );
-	
+
 	$pagination = wp_parse_args( $args, $defaults );
 
     if ( $wp_rewrite->using_permalinks() )
@@ -406,7 +406,7 @@ function japibas_paginate_links( $args = '' ) {
  * Adds theme/plugin custom images sizes added with add_image_size() to the image uploader/editor.  This 
  * allows users to insert these images within their post content editor.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @param array $sizes Selectable image sizes.
  * @return array $sizes
  */
@@ -434,7 +434,7 @@ add_filter( 'image_size_names_choose', 'japibas_image_size_names_choose' );
  * SCRIPT_DEBUG must be set to 'true' in the 'wp-config.php' file.  This will check if a 'style.dev.css'
  * file is present within the theme folder and use it if it exists.  Else, it defaults to 'style.css'.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @param string $stylesheet_uri The URI of the active theme's stylesheet.
  * @param string $stylesheet_dir_uri The directory URI of the active theme's stylesheet.
  * @return string $stylesheet_uri

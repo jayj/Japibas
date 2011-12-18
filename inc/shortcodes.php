@@ -12,7 +12,7 @@ add_action( 'init', 'japibas_add_shortcodes' );
  * Creates new shortcodes for use in any shortcode-ready area.  This function uses the add_shortcode() 
  * function to register new shortcodes with WordPress.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @uses add_shortcode() to create new shortcodes.
  * @link http://codex.wordpress.org/Shortcode_API
  * @return void
@@ -31,7 +31,7 @@ function japibas_add_shortcodes() {
 /**
  * Shortcode to display the current year.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @uses date() Gets the current year.
  * @return string
  */
@@ -42,7 +42,7 @@ function japibas_the_year_shortcode() {
 /**
  * Shortcode to display a link back to the site.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @uses get_bloginfo() Gets information about the install.
  * @return string
  */
@@ -53,7 +53,7 @@ function japibas_site_link_shortcode() {
 /**
  * Shortcode to display a link to WordPress.org.
  * 
- * @since 2.0
+ * @since Japibas 2.0
  * @return string
  */
 function japibas_wp_link_shortcode() {
@@ -63,7 +63,7 @@ function japibas_wp_link_shortcode() {
 /**
  * Shortcode to display a link to the japibas theme page.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @uses get_theme_data() Gets theme (parent theme) information.
  * @return string
  */
@@ -75,7 +75,7 @@ function japibas_theme_link_shortcode() {
 /**
  * Shortcode to display a link to the child theme's page.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @uses get_theme_data() Gets theme (child theme) information.
  * @return string
  */
@@ -87,7 +87,7 @@ function japibas_child_link_shortcode() {
 /**
  * Shortcode to display a login link or logout link.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @uses wp_loginout() Creates a login or logout URL.
  * @return string
  */
@@ -98,7 +98,7 @@ function japibas_loginout_link_shortcode() {
 /**
  * Displays query count and load time if the current user can edit themes.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @uses current_user_can() Checks if the current user can edit themes.
  * @return string
  */
@@ -111,7 +111,7 @@ function japibas_query_counter_shortcode() {
 /**
  * Displays the shortlinke of an individual entry.
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @return string
  */
 function japibas_entry_shortlink_shortcode( $attr ) {

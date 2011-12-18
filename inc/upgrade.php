@@ -20,7 +20,7 @@ add_action( 'load-themes.php', 'japibas_clear_update_transient' );
 /**
  * Pings the server for information about the new version
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @return array List of information about the new update
  */
 function japibas_update_check() {
@@ -53,13 +53,13 @@ function japibas_update_check() {
 /**
  * Checks if there's a new version available 
  *
- * @since 2.0
+ * @since Japibas 2.0
  * @return boolean true if there's an update, false if no
  */
 function japibas_update_available() {
 
 	$theme_data = get_theme_data( trailingslashit( get_template_directory() ) . 'style.css' );
-	
+
 	$update = get_transient( 'japibas-update-check' );
 	$update_available = (boolean) get_transient( 'japibas-update-available' );
 
@@ -81,11 +81,11 @@ function japibas_update_available() {
 
 	return (boolean) $update_available;
 }
-	
+
 /**
  * Display the update notice
  * 
- * @since 2.0
+ * @since Japibas 2.0
  */
 function japibas_update_notice() {
 
@@ -130,7 +130,7 @@ function japibas_update_notice() {
  * so that the server will do a fresh check, when the user
  * loads certain admin pages.
  *
- * @since 2.0
+ * @since Japibas 2.0
  */
 function japibas_clear_update_transient() {
 	delete_transient( 'japibas-update-check' );
@@ -145,7 +145,7 @@ function japibas_clear_update_transient() {
  * update, and if so, adds the proper array to the $value->response
  * object. WordPress handles the rest.
  *
- * @since 2.0
+ * @since Japibas 2.0
  */
 function japibas_update_push( $value ) {
 

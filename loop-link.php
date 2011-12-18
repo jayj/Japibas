@@ -5,7 +5,7 @@
 ?>
 
 <article <?php post_class(); ?>>
-    
+
     <?php
 		// Grab first link from the post content. If none found, use the post permalink as fallback.
 		$link_url = japibas_url_grabber();
@@ -16,7 +16,7 @@
 
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php echo esc_url( $link_url ); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?>&nbsp;<span>&rarr;</span></a></h1>
-        
+
 		<time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" pubdate>
             <a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Posted on %s', 'japibas' ), get_the_date() ); ?>">
                 <span><?php echo get_the_date( 'd' ); ?></span>
@@ -37,7 +37,7 @@
     </div> <!-- .entry-content -->
 
     <div class="clear"></div>
-    
+
     <footer class="entry-meta">
             <?php
 				// The link meta
@@ -50,9 +50,9 @@
 					esc_url( get_permalink() ),
 					esc_html( get_the_date() )
 				);
-                
+
                 edit_post_link( __( 'Edit', 'japibas' ), ' | ', '' );
             ?>
     </footer> <!-- .entry-meta -->
-    
+
 </article> <!-- .post-<?php the_ID(); ?> -->
