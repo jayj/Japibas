@@ -79,35 +79,66 @@ add_action( 'admin_menu', 'japibas_theme_options_add_page' );
 /**
  * Returns an array of color schemes registered for Japibas.
  *
- * It looks for .css files in the colors/ folder
+ * It looks for .css files in the colors/ folder in both the parent and child themes
+ * The color schemes are stored in an option
+ * To refresh it, visit the Theme Options page (will happend automatically)
  *
  * @since Japibas 2.0
  */
 function japibas_color_schemes() {
-
-	// Default color scheme
-	$color_scheme_options = array(
-		'green' => array(
-			'value' => 'green',
-			'label' => __( 'Green (default)', 'japibas' ),
-			'thumbnail' => get_template_directory_uri() . '/images/green.png',
-			'default_link_color' => '#768c22',
-		)
-	);
-
-	// Find color schemes from the colors/ folder
-	foreach ( glob( get_template_directory() . '/colors/*.css' ) as $style ) { 
-
-		// Get info about the color scheme from the header
-		$data = get_file_data( $style, array( 'name' => 'Name', 'slug' => 'Slug', 'description' => 'Description', 'linkcolor' => 'Link color' ), 'japibas' );
-
-		$color_scheme_options[ sanitize_title( $data['slug'] ) ] = array(
-			'value' => sanitize_title( $data['slug'] ),
-			'label' => esc_html( $data['name'] ),
-			'thumbnail' => esc_url( get_template_directory_uri() . '/colors/' . $data['slug'] . '/thumbnail.png' ),
-			'default_link_color' => '#' . strtolower( ltrim( $data['linkcolor'], '#' ) )
-		);
+	
+	// Refresh the transient on the Theme Options page
+	if ( is_admin() ) {
+		global $pagenow;
+		if ( $pagenow == 'themes.php' )
+			delete_option( 'japibas_color_schemes' );
 	}
+
+	// The color schemes are stored in a transient that expire every 24 hours
+	if ( false === ( $color_scheme_options = get_option( 'japibas_color_schemes' ) ) ) :
+
+		// Default color scheme
+		$color_scheme_options = array(
+			'green' => array (
+				'value' => 'green',
+				'label' => __( 'Green (default)', 'japibas' ),
+				'thumbnail' => get_template_directory_uri() . '/images/green.png',
+				'default_link_color' => '#768c22',
+			)
+		);
+
+		// Find color schemes from the colors/ folder
+		foreach ( glob( get_template_directory() . '/colors/*.css' ) as $style ) : 
+
+			// Get info about the color scheme from the header
+			$data = get_file_data( $style, array( 'name' => 'Name', 'slug' => 'Slug', 'description' => 'Description', 'linkcolor' => 'Link color' ), 'japibas' );
+
+			$color_scheme_options[ sanitize_title( $data['slug'] ) ] = array(
+				'value' => sanitize_title( $data['slug'] ),
+				'label' => esc_html( $data['name'] ),
+				'thumbnail' => esc_url( get_template_directory_uri() . '/colors/' . $data['slug'] . '/thumbnail.png' ),
+				'default_link_color' => '#' . strtolower( ltrim( $data['linkcolor'], '#' ) )
+			);
+
+		endforeach;
+
+		if ( is_child_theme() ) {
+			foreach ( glob( get_stylesheet_directory() . '/colors/*.css' ) as $style ) :
+				$data = get_file_data( $style, array( 'name' => 'Name', 'slug' => 'Slug', 'description' => 'Description', 'linkcolor' => 'Link color' ), 'japibas' );
+				
+				$color_scheme_options[ sanitize_title( $data['slug'] ) ] = array(
+					'value' => sanitize_title( $data['slug'] ),
+					'label' => esc_html( $data['name'] ),
+					'thumbnail' => esc_url( get_stylesheet_directory_uri() . '/colors/' . $data['slug'] . '/thumbnail.png' ),
+					'default_link_color' => '#' . strtolower( ltrim( $data['linkcolor'], '#' ) )
+				);
+			endforeach;
+		}
+
+		// Store color schemes in the japibas_color_schemes option
+		update_option( 'japibas_color_schemes', $color_scheme_options ); 
+
+	endif;
 
 	return apply_filters( 'japibas_color_schemes', $color_scheme_options );
 }
