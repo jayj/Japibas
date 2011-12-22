@@ -1974,3 +1974,57 @@ input[type="search"]::-webkit-search-decoration {
 		background: #fff6bf url(images/lock.png) no-repeat 10px center;
 		padding: 25px 25px 25px 80px;
 	}
+	
+/**
+ * Media queries for smaller screen sizes
+ * These follow after primary styles so they will successfully override.
+ */
+ 
+@media screen and (max-width: 1080px) {
+	.entry-date > a {
+		right: -1px;
+		left: auto;
+		top: 15px;
+	}
+	
+	.entry-comments-number {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+
+	#wrapper { width: 98%; }
+	
+	.prevBtn, .nextBtn {
+		background: none;
+		font: 14px 'Open Sans', sans-serif;
+		width: auto; height: auto;
+		top: auto;
+		bottom: 15px;
+		text-transform: capitalize;
+		text-indent: 0;
+	}
+	
+	.prevBtn { left: 30px; }
+	.nextBtn { right: 30px; }
+	
+	#content { width: 100%; }
+	
+	#sidebar {
+		float: left;
+		width: 100%;
+	}
+	
+	#sidebar .widget {
+		float: left;
+		width: 278px;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	#featured-section, #site-description { display: none; }
+	#branding { height: 130px; }
+	#main { margin-top: -60px; }
+
+}
