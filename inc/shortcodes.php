@@ -61,7 +61,7 @@ function japibas_wp_link_shortcode() {
 }
 
 /**
- * Shortcode to display a link to the japibas theme page.
+ * Shortcode to display a link to the Japibas theme page.
  *
  * @since Japibas 2.0
  * @uses get_theme_data() Gets theme (parent theme) information.

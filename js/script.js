@@ -4,12 +4,24 @@
 	 * Slider
 	 */
 	if ( typeof ( jQuery().sudoSlider ) == 'function' ) {
+		var auto = true;
+   		var autostopped = false;
 		var sudoSlider = $("#featured-section #inner-slider").sudoSlider({
-			auto: false,
+			auto: true,
 			continuous: true,
 			numeric: true,
 			speed: 600,
 			numericAttr: 'id="feature-slider"'
+		/* Pause on hover*/
+		}).mouseenter(function() {
+      		auto = sudoSlider.getValue('autoAnimation');
+			if (auto)
+				sudoSlider.stopAuto();
+			else
+				autostopped = true;
+		}).mouseleave(function() {
+			if (!autostopped)
+			sudoSlider.startAuto();
 		});
 	}
 
