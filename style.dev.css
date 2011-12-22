@@ -1987,6 +1987,11 @@ input[type="search"]::-webkit-search-decoration {
 		top: 15px;
 	}
 	
+	.sidebar-left .entry-date > a {
+		border-radius: 5px 0 0 5px;
+		left: auto; right: -1px;
+	}
+	
 	.entry-comments-number {
 		display: none;
 	}

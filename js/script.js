@@ -4,25 +4,22 @@
 	 * Slider
 	 */
 	if ( typeof ( jQuery().sudoSlider ) == 'function' ) {
-		var auto = true;
-   		var autostopped = false;
+		/*var auto = true;
+   		var autostopped = false;*/
 		var sudoSlider = $("#featured-section #inner-slider").sudoSlider({
-			auto: true,
+			auto: false,
 			continuous: true,
 			numeric: true,
-			speed: 600,
+			speed: 700,
 			numericAttr: 'id="feature-slider"'
 		/* Pause on hover*/
-		}).mouseenter(function() {
+		/*}).mouseenter(function() {
       		auto = sudoSlider.getValue('autoAnimation');
 			if (auto)
 				sudoSlider.stopAuto();
 			else
 				autostopped = true;
-		}).mouseleave(function() {
-			if (!autostopped)
-			sudoSlider.startAuto();
-		});
+		*/});
 	}
 
 	 /**

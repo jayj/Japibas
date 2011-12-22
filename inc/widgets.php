@@ -177,7 +177,7 @@ class Japibas_Related_Posts_Widget extends WP_Widget {
 	 **/
 	function form( $instance ) {
 		$title = isset( $instance['title']) ? esc_attr( $instance['title'] ) : '';
-		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 10;
+		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 ?>
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'japibas' ); ?></label>
 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>

@@ -13,7 +13,7 @@ Read [the blog post](http://jayj.dk/japibas-free-wordpress-theme/) for more info
 
 ###[See demo](http://wpthemes.jayj.dk/japibas/)
 
-![Japibas preview](preview link here)
+![Japibas preview](http://i.imgur.com/H8sFf.png)
 
 ## Features
 
