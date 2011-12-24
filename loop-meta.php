@@ -26,12 +26,12 @@
 
 		</div> <!-- .loop-meta -->
 
-	<?php elseif ( is_singular() && ! is_singular( 'attachment' ) && function_exists( 'yoast_breadcrumb' ) ) : ?>
+	<?php elseif ( is_singular() && ! is_singular( 'attachment' ) ) : ?>
 
     	<div class="loop-meta">
         	<?php
 				// Get the breaccrumb, except for in attachment pages
-            	if ( ! is_singular( 'attachment' ) )
+            	if ( function_exists( 'yoast_breadcrumb' ) && ! is_singular( 'attachment' ) )
 					yoast_breadcrumb( '<p class="loop-description breadcrumb">', '</p>' );
 			?>
         </div>
