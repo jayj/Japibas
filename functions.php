@@ -18,7 +18,7 @@ add_action( 'after_setup_theme', 'japibas_setup' );
  */
 function japibas_setup() {
 
-	define( 'THEMEVERSION', '2.0' );
+	define( 'THEMEVERSION', '2.0.1' );
 
 	$template_directory = get_template_directory();
 
