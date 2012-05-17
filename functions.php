@@ -352,7 +352,6 @@ function japibas_comment( $comment, $args, $depth ) {
 					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'japibas' ); ?></em>
 					<br />
 				<?php endif; ?>
-
 			</footer>
 
 			<div class="comment-content"><?php comment_text(); ?></div>
@@ -383,8 +382,8 @@ function japibas_paginate_links( $args = '' ) {
         'format' => '',
         'total' => $wp_query->max_num_pages,
         'current' => $current,
-        'prev_text' => __( '&laquo; Older Posts', 'japibas' ),
-        'next_text' => __( 'Newer Posts &raquo;', 'japibas' ),
+        'next_text' => __( '&laquo; Older Posts', 'japibas' ),
+        'prev_text' => __( 'Newer Posts &raquo;', 'japibas' ),
         'end_size' => 1,
         'mid_size' => 2,
         'show_all' => false,
