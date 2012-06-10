@@ -86,7 +86,7 @@ add_action( 'admin_menu', 'japibas_theme_options_add_page' );
  * @since Japibas 2.0
  */
 function japibas_color_schemes() {
-	
+
 	// Refresh the option on the Theme Options page
 	if ( is_admin() ) {
 		global $pagenow;
@@ -108,7 +108,7 @@ function japibas_color_schemes() {
 		);
 
 		// Find color schemes from the colors/ folder
-		foreach ( glob( get_template_directory() . '/colors/*.css' ) as $style ) : 
+		foreach ( glob( get_template_directory() . '/colors/*.css' ) as $style ) :
 
 			// Get info about the color scheme from the header
 			$data = get_file_data( $style, array( 'name' => 'Name', 'slug' => 'Slug', 'description' => 'Description', 'linkcolor' => 'Link color' ), 'japibas' );
@@ -185,7 +185,7 @@ function japibas_logos() {
 	);
 
 	// Look in each color scheme for a logo.png
-	foreach ( glob( get_template_directory() . '/colors/*.css' ) as $style ) { 
+	foreach ( glob( get_template_directory() . '/colors/*.css' ) as $style ) {
 		// Get the color scheme name and slug from the header
 		$data = get_file_data( $style, array( 'name' => 'Name', 'slug' => 'Slug' ), 'japibas' );
 		$slug = $data['slug'];
@@ -202,8 +202,8 @@ function japibas_logos() {
 	// If the user is using a child theme, add the logo.png from that as well
 	if ( is_child_theme() && file_exists( get_stylesheet_directory() . '/images/logo.png' ) )
 		$logos['japibas-childtheme-logo'] = array(
-				'url' => CHILD_THEME_URI . '/images/logo.png',
-				'thumbnail_url' => CHILD_THEME_URI . '/images/logo.png',
+				'url' => get_stylesheet_directory_uri() . '/images/logo.png',
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/images/logo.png',
 				'description' => __( 'Logo.png from the Japibas child theme images folder', 'japibas' )
 		);
 
@@ -383,7 +383,7 @@ function japibas_theme_options_render_page() { ?>
                         <label class="description">
                             <select name="japibas_theme_options[exclude_cats][]" multiple="multiple">
                             <?php foreach ( get_categories( array( 'hide_empty' => 0 ) ) as $cat ) { ?>
-                            	<?php $selected = ( in_array( $cat->term_id, $options['exclude_cats'] ) ) ? 'selected="selected"' : ''; ?> 
+                            	<?php $selected = ( in_array( $cat->term_id, $options['exclude_cats'] ) ) ? 'selected="selected"' : ''; ?>
                             	<option value="<?php echo intval( $cat->term_id ); ?>" <?php echo $selected; ?>><?php echo $cat->name; ?></option>
                             <?php } ?>
                             </select>
@@ -395,9 +395,9 @@ function japibas_theme_options_render_page() { ?>
             </tr>
 
 		</table>
- 
+
 		<h3><?php _e( 'Slider', 'japibas' ); ?></h3>
-  
+
 		<table class="form-table">
 
             <tr valign="top" class="image-radio-option color-scheme"><th scope="row"><?php _e( 'Slider Category', 'japibas' ); ?></th>
@@ -433,7 +433,7 @@ function japibas_theme_options_render_page() { ?>
             </tr>
 
 		</table>
-  
+
 		<h3><?php _e( 'Other settings', 'japibas' ); ?></h3>
 
 		<table class="form-table">

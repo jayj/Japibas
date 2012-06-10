@@ -7,7 +7,7 @@
 <article <?php post_class(); ?>>
 
     <header class="entry-header">
-        <h1 class="entry-title"><?php the_title(); ?></h1>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
         <?php if ( 'post' == get_post_type() ) : ?>
             <time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" pubdate>
