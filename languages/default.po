@@ -586,4 +586,3 @@ msgstr ""
 #: ../inc/widgets.php:185
 msgid "Number of posts to show:"
 msgstr ""
-
