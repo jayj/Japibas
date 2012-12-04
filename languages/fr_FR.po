@@ -189,12 +189,10 @@ msgid "Reply <span>&darr;</span>"
 msgstr "Répondre <span>&darr;</span>"
 
 #: ../functions.php:385
-#, fuzzy
 msgid "Older Posts &raquo;"
 msgstr "Anciens articles &raquo;"
 
 #: ../functions.php:386
-#, fuzzy
 msgid "&laquo; Newer Posts"
 msgstr "&laquo; Articles plus récents"
 
