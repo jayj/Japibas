@@ -7,6 +7,7 @@
 <head>
 
     <meta charset="<?php bloginfo('charset'); ?>" />
+   	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title><?php wp_title( '|', true, 'right' ); ?></title>
 
@@ -49,7 +50,7 @@
 				}
 			?>
             <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-        </hgroup> 
+        </hgroup>
 
         <nav id="access" role="navigation">
             <h3 class="assistive-text"><?php _e( 'Main menu', 'japibas' ); ?></h3>
