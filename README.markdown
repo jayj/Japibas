@@ -7,7 +7,7 @@ Version 2.0 is a completely rewritten of the 2009 version of the theme. The them
 Read [the blog post](http://jayj.dk/japibas-free-wordpress-theme/) for more information
 
 * Requires at least WordPress 3.3
-* Tested up to 3.3
+* Tested up to 4.1
 
 ## Demo
 

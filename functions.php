@@ -18,7 +18,7 @@ add_action( 'after_setup_theme', 'japibas_setup' );
  */
 function japibas_setup() {
 
-	define( 'THEMEVERSION', '2.0.1' );
+	define( 'THEMEVERSION', '2.0.2' );
 
 	$template_directory = get_template_directory();
 
@@ -290,7 +290,7 @@ function japibas_custom_excerpt_more( $output ) {
 add_filter( 'get_the_excerpt', 'japibas_custom_excerpt_more' );
 
 /**
- * Add contact methods 
+ * Add contact methods
  *
  * @since Japibas 2.0
  */
@@ -402,7 +402,7 @@ function japibas_paginate_links( $args = '' ) {
 }
 
 /**
- * Adds theme/plugin custom images sizes added with add_image_size() to the image uploader/editor.  This 
+ * Adds theme/plugin custom images sizes added with add_image_size() to the image uploader/editor.  This
  * allows users to insert these images within their post content editor.
  *
  * @since Japibas 2.0
@@ -429,7 +429,7 @@ function japibas_image_size_names_choose( $sizes ) {
 add_filter( 'image_size_names_choose', 'japibas_image_size_names_choose' );
 
 /**
- * Function for using a debug stylesheet when developing.  To develop with the debug stylesheet, 
+ * Function for using a debug stylesheet when developing.  To develop with the debug stylesheet,
  * SCRIPT_DEBUG must be set to 'true' in the 'wp-config.php' file.  This will check if a 'style.dev.css'
  * file is present within the theme folder and use it if it exists.  Else, it defaults to 'style.css'.
  *
