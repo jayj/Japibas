@@ -1,0 +1,653 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Japibas 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-21 18:27+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Duval Mickael <duvalmickael@gmail.com>\n"
+"Language-Team: Jayj.dk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_x;"
+"_ex;esc_attr_x;esc_html_x;_n;_nx;_n_noop;_nx_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:7
+msgid "Uh oh, 404, we can&rsquo;t find that page!"
+msgstr "Oups, erreur 404, nous ne pouvons pas trouver cette page !"
+
+#: ../404.php:10
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Nous n'avons pas trouvé ce que vous cherchiez... Essayez d'utiliser la "
+"fonction de recherche."
+
+#: ../404.php:13
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching or one of the links below can help."
+msgstr ""
+"Nous n'avons pas trouvé ce que vous cherchiez... Essayez d'utiliser la "
+"fonction de recherche."
+
+#: ../archive.php:17 ../search.php:25
+msgid "Nothing Found"
+msgstr "Aucun résultat"
+
+#: ../archive.php:21
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Désolé, mais aucun résultat n'a été trouvé dans cette archive. Essayez la "
+"recherche pour retrouver un article en relation."
+
+#: ../author.php:23
+#, php-format
+msgid "%s's Latest Comments"
+msgstr "Derniers commentaires d'%s"
+
+#: ../author.php:34
+#, php-format
+msgid "Commented on %s"
+msgstr "A commenté l'article %s"
+
+#: ../author.php:38
+#, php-format
+msgid "Replied to %1$s on %2$s"
+msgstr "A répondu à %1$s dans %2$s"
+
+#: ../author.php:55
+#, php-format
+msgid "%s's Latest Posts"
+msgstr "%s's derniers articles"
+
+#: ../author.php:67
+#, php-format
+msgid "%s hasn't written any posts yet"
+msgstr "%s n'a écrit aucun article pour le moment"
+
+#: ../author.php:70
+#, php-format
+msgid ""
+"Apologies, but the user %s hasn't written any posts yet for this site yet."
+msgstr "Désolé, mais l'utilisateur %s n'a écrit aucun article pour le moment."
+
+#: ../comments.php:17
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Cet article est protégé par un mot de passe. Entrez le mot de passe pour "
+"voir les commentaires."
+
+#: ../comments.php:34
+#, php-format
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgstr "Un commentaire pour &ldquo;%2$s&rdquo;"
+
+#: ../comments.php:45
+msgid "Comment navigation"
+msgstr "Navigation commentaire"
+
+#: ../comments.php:46
+msgid "&larr; Older Comments"
+msgstr "&larr; Anciens commentaires"
+
+#: ../comments.php:47
+msgid "Newer Comments &rarr;"
+msgstr "Commentaires plus récents &rarr;"
+
+#: ../comments.php:60
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: ../functions.php:31
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: ../functions.php:107
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+#: ../functions.php:109
+msgid "Widgets for the sidebar"
+msgstr "Widgets pour la barre latérale"
+
+#: ../functions.php:118
+msgid "Single Post"
+msgstr "Article seul"
+
+#: ../functions.php:120
+msgid "These widgets will be displayed after the content on single posts."
+msgstr "Ces widgets seront affichés après le contenu des pages d'article"
+
+#: ../functions.php:129
+msgid "Footer Area One"
+msgstr "Pied de page, zone 1"
+
+#: ../functions.php:131 ../functions.php:141 ../functions.php:151
+msgid "An optional widget area for your site footer"
+msgstr "Une zone de widget optionnelle pour votre pied de page"
+
+#: ../functions.php:139
+msgid "Footer Area Two"
+msgstr "Pied de page, zone 2"
+
+#: ../functions.php:149
+msgid "Footer Area Three"
+msgstr "Pied de page, zone 3"
+
+#: ../functions.php:160
+msgid "404 Page"
+msgstr "Page 404"
+
+#: ../functions.php:162
+msgid "Widgets for the 404 error page"
+msgstr "Widgets pour la page d'erreur 404"
+
+#: ../functions.php:262 ../loop-image.php:23 ../loop-link.php:35
+#: ../loop-quote.php:14 ../loop-status.php:29 ../loop-video.php:27
+#: ../loop.php:68
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lire la suite... <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../functions.php:320
+msgid "Pingback:"
+msgstr "Retroliens :"
+
+#: ../functions.php:320 ../image.php:84 ../loop-image.php:40
+#: ../loop-link.php:54 ../loop-quote.php:33 ../loop-single.php:64
+#: ../loop-status.php:45 ../loop-video.php:46 ../loop.php:97 ../page.php:29
+msgid "Edit"
+msgstr "Modifier"
+
+#: ../functions.php:338
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">dit :</span>"
+
+#: ../functions.php:345
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s à  %2$s"
+
+#: ../functions.php:348
+msgid "(Edit)"
+msgstr "(Modifier)"
+
+#: ../functions.php:352
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération."
+
+#: ../functions.php:360
+msgid "Reply <span>&darr;</span>"
+msgstr "Répondre <span>&darr;</span>"
+
+#: ../functions.php:385
+msgid "Older Posts &raquo;"
+msgstr "Anciens articles &raquo;"
+
+#: ../functions.php:386
+msgid "&laquo; Newer Posts"
+msgstr "&laquo; Articles plus récents"
+
+#: ../header.php:55
+msgid "Main menu"
+msgstr "Menu principal"
+
+#: ../image.php:66 ../loop-image.php:24 ../loop-link.php:36
+#: ../loop-quote.php:15 ../loop-single.php:33 ../loop-status.php:30
+#: ../loop-video.php:28 ../loop.php:53 ../loop.php:69 ../page.php:24
+msgid "<span>Pages:</span>"
+msgstr "<span>Pages :</span>"
+
+#: ../image.php:77
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s"
+"\">%2$s</abbr></span> in <a href=\"%3$s\" title=\"Return to %4$s\" rel="
+"\"gallery\">%4$s</a>"
+msgstr ""
+"Publié <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">"
+"%2$s</abbr></span> dans <a href=\"%3$s\" title=\"Return to %4$s\" rel="
+"\"gallery\">%4$s</a>"
+
+#: ../loop-image.php:32
+#, php-format
+msgid ""
+"<a href=\"%1$s\" rel=\"bookmark\">%2$s</a> by <span class=\"author vcard"
+"\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span>"
+msgstr ""
+"<a href=\"%1$s\" rel=\"bookmark\">%2$s</a> par <span class=\"author vcard"
+"\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span>"
+
+#: ../loop-image.php:36 ../loop-link.php:48 ../loop-quote.php:27
+#: ../loop-single.php:56 ../loop-status.php:24 ../loop-video.php:40
+#: ../loop.php:89
+#, php-format
+msgid "View all posts by %s"
+msgstr "Voir tous les articles de %s"
+
+#: ../loop-image.php:47 ../loop-image.php:53 ../loop-single.php:49
+#: ../loop-single.php:58 ../loop.php:82 ../loop.php:91
+msgid ", "
+msgstr ","
+
+#: ../loop-image.php:49
+#, php-format
+msgid "Tagged %s"
+msgstr "Mot clés : %s"
+
+#: ../loop-image.php:52
+#, php-format
+msgid "Posted in %1$s %2$s"
+msgstr "Publié dans %1$s %2$s"
+
+#: ../loop-link.php:21 ../loop-single.php:14 ../loop-video.php:13
+#: ../loop.php:26
+#, php-format
+msgid "Posted on %s"
+msgstr "Publié dans %s"
+
+#: ../loop-link.php:44
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\">Link</a> posted by <span class=\"author vcard"
+"\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> on <a "
+"href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+msgstr ""
+"<a href=\"%1$s\" title=\"%2$s\">Link</a> publié  par <span class=\"author "
+"vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> "
+"dans  <a href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+
+#: ../loop-link.php:46 ../loop-quote.php:25
+msgid "View all Quotes"
+msgstr "Voir toutes les citations"
+
+#: ../loop-meta.php:43
+msgid "Image navigation"
+msgstr "Navigation d'images"
+
+#: ../loop-meta.php:44
+msgid "&larr; Previous Image"
+msgstr "&larr; Image précédente"
+
+#: ../loop-meta.php:45
+msgid "Next Image &rarr;"
+msgstr "Image suivante &rarr;"
+
+#: ../loop-meta.php:55
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Archive de la catégorie : %s"
+
+#: ../loop-meta.php:69
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Archives du mot clé : %s"
+
+#: ../loop-meta.php:84
+#, php-format
+msgid "Post format: %s"
+msgstr "Article du format : %s"
+
+#: ../loop-meta.php:101
+#, php-format
+msgid "Archives: %s"
+msgstr "Archives : %s"
+
+#: ../loop-meta.php:119
+#, php-format
+msgid "User: %s"
+msgstr "Utilisateur : %s"
+
+#: ../loop-meta.php:134
+#, php-format
+msgid "Find %s on:"
+msgstr "Retrouvez %s sur :"
+
+#: ../loop-meta.php:200
+#, php-format
+msgid "%d Search Result for:"
+msgstr "%d résultats de la recherche pour :"
+
+#: ../loop-meta.php:206
+#, php-format
+msgid "You are browsing the search results for &quot;%1$s&quot;"
+msgstr "Vous parcourez les résultats de recherche pour &quot;%1$s&quot;"
+
+#: ../loop-meta.php:219
+msgid "F Y"
+msgstr "F Y"
+
+#: ../loop-meta.php:221 ../inc/shortcodes.php:39
+msgid "Y"
+msgstr "Y"
+
+#: ../loop-meta.php:224
+#, php-format
+msgid "Archives for %s"
+msgstr "Archives pour  %s"
+
+#: ../loop-meta.php:227
+msgid "You are browsing the site archives by date."
+msgstr "Vous parcourez les archives du site par dates."
+
+#: ../loop-meta.php:250
+msgid "Blog Archives"
+msgstr "Archives du Blog"
+
+#: ../loop-meta.php:253
+msgid "You are browsing the site archives."
+msgstr "Vous parcourez les archives du site."
+
+#: ../loop-quote.php:23
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\">Quote</a> posted by <span class=\"author "
+"vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> "
+"on <a href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+msgstr ""
+"<a href=\"%1$s\" title=\"%2$s\">Citation</a> publiées par <span class="
+"\"author vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</"
+"a></span> sur <a href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+
+#: ../loop-single.php:51 ../loop.php:84
+#, php-format
+msgid "| Tagged %s"
+msgstr "| Mots clés : %s"
+
+#: ../loop-single.php:54 ../loop.php:87
+#, php-format
+msgid ""
+"Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" "
+"title=\"%2$s\">%3$s</a></span> in %4$s %5$s"
+msgstr ""
+"Publié par <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" "
+"title=\"%2$s\">%3$s</a></span> dans %4$s %5$s"
+
+#: ../loop-status.php:22
+#, php-format
+msgid ""
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s"
+"\">%3$s</a></span>"
+msgstr ""
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s"
+"\">%3$s</a></span>"
+
+#: ../loop-status.php:38
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\">Status</a> posted on <a href=\"%3$s\" rel="
+"\"bookmark\">%4$s</a>"
+msgstr ""
+"<a href=\"%1$s\" title=\"%2$s\">Statut</a> publié le <a href=\"%3$s\" rel="
+"\"bookmark\">%4$s</a>"
+
+#: ../loop-status.php:40
+msgid "View all Statuses"
+msgstr "Voir tous les statuts"
+
+#: ../loop-video.php:36
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\">Video</a> posted by <span class=\"author "
+"vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> "
+"on <a href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+msgstr ""
+"<a href=\"%1$s\" title=\"%2$s\">Video</a> publiée par <span class=\"author "
+"vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> "
+"le <a href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+
+#: ../loop-video.php:38
+msgid "View all Videoes"
+msgstr "Voir toutes les vidéos"
+
+#: ../search.php:12
+msgid "Not what you're looking for?"
+msgstr "Ce n'est pas ce que vous cherchez ?"
+
+#: ../search.php:15
+msgid "Try searching again with some different keywords"
+msgstr "Essayez de rechercher à nouveau avec des mots clés différents"
+
+#: ../search.php:28
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Désolé, mais aucun résultat ne correspond à vos critères de recherche. Merci "
+"de réessayez avec des mots clés différents."
+
+#: ../searchform.php:16
+msgid "Search this site..."
+msgstr "Rechercher sur ce site..."
+
+#: ../searchform.php:22
+msgid "Search"
+msgstr "Rech."
+
+#: ../slider.php:33
+msgid "Featured Posts"
+msgstr "Meilleurs articles"
+
+#: ../slider.php:75
+msgid "Pages:"
+msgstr "Pages :"
+
+#: ../inc/metabox.php:12 ../inc/metabox.php:26
+msgid "Thumbnail"
+msgstr "Miniature"
+
+#: ../inc/metabox.php:36
+msgid "Slider Image"
+msgstr "Images slider"
+
+#: ../inc/shortcodes.php:60
+msgid ""
+"Powered by WordPress, state-of-the-art semantic personal publishing platform"
+msgstr "Fièrement propulsé par WordPress"
+
+#: ../inc/shortcodes.php:60
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../inc/shortcodes.php:107
+#, php-format
+msgid "This page loaded in %1$s seconds with %2$s database queries."
+msgstr ""
+"Cette page s'est chargée en %1$s secondes avec %2$s requêtes en base de "
+"données."
+
+#: ../inc/shortcodes.php:122
+msgid "Shortlink"
+msgstr "Raccourci"
+
+#: ../inc/theme-options.php:69 ../inc/theme-options.php:70
+msgid "Theme Options"
+msgstr "Options du thème"
+
+#: ../inc/theme-options.php:104
+msgid "Green (default)"
+msgstr "Vert (défaut)"
+
+#: ../inc/theme-options.php:155
+msgid "Content on left"
+msgstr "Contenu à gauche"
+
+#: ../inc/theme-options.php:160
+msgid "Content on right"
+msgstr "Contenu à droite"
+
+#: ../inc/theme-options.php:165
+msgid "One-column, no sidebar"
+msgstr "Une colonne, pas de barre latérale"
+
+#: ../inc/theme-options.php:183
+msgid "Logo.png from the Japibas images folder"
+msgstr "Logo.png depuis le repertoire d'images de Japibas"
+
+#: ../inc/theme-options.php:198
+#, php-format
+msgid "Logo.png from the Japibas %s color scheme images folder"
+msgstr "Logo.png depuis le repertoire d'images de Japibas couleur %s"
+
+#: ../inc/theme-options.php:207
+msgid "Logo.png from the Japibas child theme images folder"
+msgstr "Logo.png depuis le repertoire d'images de Japibas (child)"
+
+#: ../inc/theme-options.php:227
+msgid "Copyright &#169; [the-year] [site-link]"
+msgstr "Copyright &#169; [the-year] [site-link]"
+
+#: ../inc/theme-options.php:227
+msgid "Powered by [wp-link] and [theme-link]"
+msgstr "Propulsé par [wp-link] et [theme-link]"
+
+#: ../inc/theme-options.php:232
+msgid "Copyright &#169; [the-year] [site-link]."
+msgstr "Copyright &#169; [the-year] [site-link]."
+
+#: ../inc/theme-options.php:232
+msgid "Powered by [wp-link], [theme-link], and [child-link]."
+msgstr "Propulsé par [wp-link], [theme-link], et [child-link]."
+
+#: ../inc/theme-options.php:279
+#, php-format
+msgid "%s Theme Options"
+msgstr "%s options du thème"
+
+#: ../inc/theme-options.php:291 ../inc/theme-options.php:294
+#: ../inc/theme-options.php:361
+msgid "Color Scheme"
+msgstr "Couleurs"
+
+#: ../inc/theme-options.php:314 ../inc/theme-options.php:317
+msgid "Logo"
+msgstr "Logo"
+
+#: ../inc/theme-options.php:341 ../inc/theme-options.php:344
+msgid "Link Color"
+msgstr "Couleur du lien"
+
+#: ../inc/theme-options.php:349
+msgid "Select a Color"
+msgstr "Choisir une couleur"
+
+#: ../inc/theme-options.php:353
+#, php-format
+msgid "Default color: %s"
+msgstr "Couleur par défaut : %s"
+
+#: ../inc/theme-options.php:358
+msgid "Default Layout"
+msgstr "Forme par défaut"
+
+#: ../inc/theme-options.php:378 ../inc/theme-options.php:381
+msgid "Exclude categories"
+msgstr "Catégorie à exclure"
+
+#: ../inc/theme-options.php:391
+msgid ""
+"Want to exclude some categories from the loop? (Hold down <kbd>CTRL/CMD</"
+"kbd> to select multiple)"
+msgstr ""
+"Envie d'exclure certaines catégories de la boucle d'affichage ? (Maintenez "
+"<kbd>CTRL ou CMD</kbd> pour en sélectionner plusieurs)"
+
+#: ../inc/theme-options.php:399
+msgid "Slider"
+msgstr "Slider"
+
+#: ../inc/theme-options.php:403 ../inc/theme-options.php:406
+msgid "Slider Category"
+msgstr "Catégorie du Slider"
+
+#: ../inc/theme-options.php:416
+msgid "Choose a category for the slider posts. Leave empty to disable slider"
+msgstr ""
+"Choisissez une catégorie pour les articles du slider. Laissez vide pour "
+"désactiver le slider."
+
+#: ../inc/theme-options.php:422 ../inc/theme-options.php:425
+msgid "Number of Posts"
+msgstr "Nombre d'articles"
+
+#: ../inc/theme-options.php:429
+msgid ""
+"Number of posts in the slider. Use <code>-1</code> for all posts in the "
+"selected category"
+msgstr ""
+"Nombre d'articles pour le slider. Utilisez <code>-1</code> pour afficher "
+"tous les articles de la catégorie sélectionnée."
+
+#: ../inc/theme-options.php:437
+msgid "Other settings"
+msgstr "Autres options"
+
+#: ../inc/theme-options.php:441 ../inc/theme-options.php:444
+msgid "Footer text"
+msgstr "Texte du pied de page"
+
+#: ../inc/theme-options.php:455
+msgid ""
+"You can add custom <acronym title=\"Hypertext Markup Language\">HTML</"
+"acronym> and/or shortcodes, which will be automatically inserted into your "
+"theme."
+msgstr ""
+"Vous pouvez ajouter du <acronym title=\"Hypertext Markup Language\">HTML</"
+"acronym> et/ou du code personnalisé qui peut être automatiquement ajouté "
+"dans votre thème."
+
+#: ../inc/theme-options.php:456
+#, php-format
+msgid "Shortcodes: %s"
+msgstr "Codes : %s"
+
+#: ../inc/upgrade.php:100
+msgid ""
+"Upgrading Japibas will overwrite the current installed version of Japibas. "
+"Are you sure you want to upgrade?. \"Cancel\" to stop, \"OK\" to upgrade."
+msgstr ""
+"Mettre à jour Japibas va écraser votre installation actuelle de Japibas. "
+"Êtes-vous sur de vouloir effectuer la mise à jour ?. \"Cancel\" to stop, \"OK"
+"\" to upgrade."
+
+#: ../inc/upgrade.php:104
+#, php-format
+msgid ""
+"Japibas %s is available. <a href=\"%s\">Check out what's new</a> or <a href="
+"\"%s\" onclick=\"return japibas_confirm_upgrade('%s');\">update now</a>. "
+msgstr ""
+"Japibas %s est disponible. <a href=\"%s\">Regarder ce qu'il y a de nouveau</"
+"a> ou <a href=\"%s\" onclick=\"return japibas_confirm_upgrade('%s');"
+"\">effectuer la mise à jour maintenant</a>. "
+
+#: ../inc/widgets.php:13
+msgid ""
+"Use this widget to list related posts to the current viewed post based on "
+"category and post format"
+msgstr ""
+"Utilisez ce widget pour lister les articles en relation avec l'article "
+"courant, à partir de sa catégorie et de son format "
+
+#: ../inc/widgets.php:14
+msgid "Japibas: Related Posts"
+msgstr "Japibas : Articles en relation"
+
+#: ../inc/widgets.php:84
+msgid "No related posts"
+msgstr "Pas d'article en relation"
+
+#: ../inc/widgets.php:182
+msgid "Title:"
+msgstr "Titre :"
+
+#: ../inc/widgets.php:185
+msgid "Number of posts to show:"
+msgstr "Nombre d'articles à afficher :"
