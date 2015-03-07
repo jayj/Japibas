@@ -1,0 +1,778 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Japibas v2.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-02-19 17:02+0100\n"
+"Last-Translator: Jesper J <kontakt@jayj.dk>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: de_DE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ japibas
+#: 404.php:7
+msgid "Uh oh, 404, we can&rsquo;t find that page!"
+msgstr "Fehler 404, Leider konnten wir die Seite nicht finden!"
+
+# @ japibas
+#: 404.php:10
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Leider konnten wir nichts finden."
+
+# @ japibas
+#: 404.php:13
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching or one of the links below can help."
+msgstr ""
+"Leider konnten wir nichts finden, vielleicht hilft die Suche oder einer der "
+"Links."
+
+# @ japibas
+#: archive.php:17 search.php:25
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+# @ japibas
+#: archive.php:21
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Entschuldigung, leider wurde nichts gefunden. Eventuell findet die Suche "
+"einen passenden Beitrag."
+
+# @ japibas
+#: author.php:23
+#, php-format
+msgid "%s's Latest Comments"
+msgstr "Neueste Kommentare von %s"
+
+# @ japibas
+#: author.php:34
+#, php-format
+msgid "Commented on %s"
+msgstr "Kommentar hinzugefügt bei %s"
+
+# @ japibas
+#: author.php:38
+#, php-format
+msgid "Replied to %1$s on %2$s"
+msgstr "Geantwortet auf %1$s bei %2$s"
+
+# @ japibas
+#: author.php:55
+#, php-format
+msgid "%s's Latest Posts"
+msgstr "Neueste Artikel von %s"
+
+# @ japibas
+#: author.php:67
+#, php-format
+msgid "%s hasn't written any posts yet"
+msgstr "%s hat noch keinen Artikel geschrieben"
+
+# @ japibas
+#: author.php:70
+#, php-format
+msgid ""
+"Apologies, but the user %s hasn't written any posts yet for this site yet."
+msgstr "%s hat bis jetzt noch keinen Artikel auf dieser Seite veröffentlicht. "
+
+# @ japibas
+#: comments.php:17
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Geben Sie das Passwort ein um die "
+"Kommentare zu sehen."
+
+# @ japibas
+#: comments.php:34
+#, php-format
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "Ein Kommentar bei &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Kommentare bei &ldquo;%2$s&rdquo;"
+
+# @ japibas
+#: comments.php:45
+msgid "Comment navigation"
+msgstr "Kommentarnavigation"
+
+# @ japibas
+#: comments.php:46
+msgid "&larr; Older Comments"
+msgstr "&larr; ältere Kommentare"
+
+# @ japibas
+#: comments.php:47
+msgid "Newer Comments &rarr;"
+msgstr "neuere Kommentare &rarr;"
+
+# @ japibas
+#: comments.php:60
+msgid "Comments are closed."
+msgstr "Kommentare geschlossen."
+
+# @ japibas
+#: functions.php:31
+msgid "Primary Menu"
+msgstr "Primär Menü"
+
+# @ japibas
+#: functions.php:107
+msgid "Sidebar"
+msgstr "Sidebar"
+
+# @ japibas
+#: functions.php:109
+msgid "Widgets for the sidebar"
+msgstr "Widgets für die Sidebar"
+
+# @ japibas
+#: functions.php:118
+msgid "Single Post"
+msgstr "Artikel"
+
+# @ japibas
+#: functions.php:120
+msgid "These widgets will be displayed after the content on single posts."
+msgstr "Diese Widgets werden nach dem Inhalt auf Artikel angezeigt."
+
+# @ japibas
+#: functions.php:129
+msgid "Footer Area One"
+msgstr "Footer-Bereich 1"
+
+# @ japibas
+#: functions.php:131 functions.php:141 functions.php:151
+msgid "An optional widget area for your site footer"
+msgstr "Ein optionales Widget für den site footer"
+
+# @ japibas
+#: functions.php:139
+msgid "Footer Area Two"
+msgstr "Footer-Bereich 2"
+
+# @ japibas
+#: functions.php:149
+msgid "Footer Area Three"
+msgstr "Footer-Bereich 3"
+
+# @ japibas
+#: functions.php:160
+msgid "404 Page"
+msgstr "Fehler 404"
+
+# @ japibas
+#: functions.php:162
+msgid "Widgets for the 404 error page"
+msgstr "Widgets für Fehler 404-Seite"
+
+# @ japibas
+#: functions.php:262 loop-image.php:23 loop-link.php:35 loop-quote.php:14
+#: loop-status.php:29 loop-video.php:27 loop.php:68
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+# @ japibas
+#: functions.php:320
+msgid "Pingback:"
+msgstr "Pingback:"
+
+# @ japibas
+#: functions.php:320 image.php:84 loop-image.php:40 loop-link.php:54
+#: loop-quote.php:33 loop-single.php:64 loop-status.php:45 loop-video.php:46
+#: loop.php:97 page.php:29
+msgid "Edit"
+msgstr "Bearbeiten"
+
+# @ japibas
+#: functions.php:338
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">sagt:</span>"
+
+# @ japibas
+#. translators: 1: date, 2: time
+#: functions.php:345
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s bei %2$s"
+
+# @ japibas
+#: functions.php:348
+msgid "(Edit)"
+msgstr "(Bearbeiten)"
+
+# @ japibas
+#: functions.php:352
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf Freischaltung. "
+
+# @ japibas
+#: functions.php:361
+msgid "Reply <span>&darr;</span>"
+msgstr "antworten <span>&darr;</span>"
+
+# @ japibas
+#: functions.php:386
+msgid "&laquo; Older Posts"
+msgstr "&laquo; ältere Beiträge"
+
+# @ japibas
+#: functions.php:387
+msgid "Newer Posts &raquo;"
+msgstr "neuere Beiträge &raquo;"
+
+# @ japibas
+#: header.php:56
+msgid "Main menu"
+msgstr "Hauptmenü "
+
+# @ japibas
+#: image.php:66 loop-image.php:24 loop-link.php:36 loop-quote.php:15
+#: loop-single.php:33 loop-status.php:30 loop-video.php:28 loop.php:53
+#: loop.php:69 page.php:24
+msgid "<span>Pages:</span>"
+msgstr "<span>Seiten:</span>"
+
+# @ japibas
+#: image.php:77
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s"
+"\">%2$s</abbr></span> in <a href=\"%3$s\" title=\"Return to %4$s\" rel="
+"\"gallery\">%4$s</a>"
+msgstr ""
+"Veröffentlicht <span class=\"entry-date\"><abbr class=\"published\" title="
+"\"%1$s\">%2$s</abbr></span> in <a href=\"%3$s\" title=\"Return to %4$s\" rel="
+"\"gallery\">%4$s</a>"
+
+# @ japibas
+#: inc/metabox.php:12 inc/metabox.php:26
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+# @ japibas
+#: inc/metabox.php:36
+msgid "Slider Image"
+msgstr "Slider-Bild"
+
+# @ japibas
+#: inc/shortcodes.php:39 loop-meta.php:221
+msgid "Y"
+msgstr "Y"
+
+# @ japibas
+#: inc/shortcodes.php:60
+msgid ""
+"Powered by WordPress, state-of-the-art semantic personal publishing platform"
+msgstr ""
+"Powered by WordPress, state-of-the-art semantic personal publishing platform"
+
+# @ japibas
+#: inc/shortcodes.php:60
+msgid "WordPress"
+msgstr "Wordpress"
+
+# @ japibas
+#: inc/shortcodes.php:107
+#, php-format
+msgid "This page loaded in %1$s seconds with %2$s database queries."
+msgstr "This page loaded in %1$s seconds with %2$s database queries."
+
+# @ japibas
+#: inc/shortcodes.php:122
+msgid "Shortlink"
+msgstr "Kurzlink"
+
+# @ japibas
+#: inc/theme-options.php:69 inc/theme-options.php:70
+msgid "Theme Options"
+msgstr "Theme Options"
+
+# @ japibas
+#: inc/theme-options.php:104
+msgid "Green (default)"
+msgstr "Grün (Standardt)"
+
+# @ japibas
+#: inc/theme-options.php:155
+msgid "Content on left"
+msgstr "Inhalt links"
+
+# @ japibas
+#: inc/theme-options.php:160
+msgid "Content on right"
+msgstr "Inhalt rechts"
+
+# @ japibas
+#: inc/theme-options.php:165
+msgid "One-column, no sidebar"
+msgstr "Eine Spalte, keine Sidebar"
+
+# @ japibas
+#: inc/theme-options.php:183
+msgid "Logo.png from the Japibas images folder"
+msgstr "Logo.png aus dem Japibas \\\"images\\\" Ordner"
+
+# @ japibas
+#: inc/theme-options.php:198
+#, php-format
+msgid "Logo.png from the Japibas %s color scheme images folder"
+msgstr "Logo.png aus dem Japibas %s Farbvorlagen-Ordner"
+
+# @ japibas
+#: inc/theme-options.php:207
+msgid "Logo.png from the Japibas child theme images folder"
+msgstr "Logo.png aus dem Japibas child Theme \\\"images\\\" Ordner"
+
+# @ japibas
+#: inc/theme-options.php:227
+msgid "Copyright &#169; [the-year] [site-link]"
+msgstr "Copyright &#169; [the-year] [site-link]"
+
+# @ japibas
+#: inc/theme-options.php:227
+msgid "Powered by [wp-link] and [theme-link]"
+msgstr "Powered by [wp-link] and [theme-link]"
+
+# @ japibas
+#: inc/theme-options.php:232
+msgid "Copyright &#169; [the-year] [site-link]."
+msgstr "Copyright &#169; [the-year] [site-link]."
+
+# @ japibas
+#: inc/theme-options.php:232
+msgid "Powered by [wp-link], [theme-link], and [child-link]."
+msgstr "Powered by [wp-link], [theme-link], and [child-link]."
+
+# @ japibas
+#: inc/theme-options.php:279
+#, php-format
+msgid "%s Theme Options"
+msgstr "%s Theme Optionen"
+
+# @ japibas
+#: inc/theme-options.php:291 inc/theme-options.php:294
+#: inc/theme-options.php:361
+msgid "Color Scheme"
+msgstr "Farbvorlage"
+
+# @ japibas
+#: inc/theme-options.php:314 inc/theme-options.php:317
+msgid "Logo"
+msgstr "Logo"
+
+# @ japibas
+#: inc/theme-options.php:341 inc/theme-options.php:344
+msgid "Link Color"
+msgstr "Linkfarbe"
+
+# @ japibas
+#: inc/theme-options.php:349
+msgid "Select a Color"
+msgstr "Wähle eine Farbe"
+
+# @ japibas
+#: inc/theme-options.php:353
+#, php-format
+msgid "Default color: %s"
+msgstr "Standardfarbe: %s"
+
+# @ japibas
+#: inc/theme-options.php:358
+msgid "Default Layout"
+msgstr "Standardlayout"
+
+# @ japibas
+#: inc/theme-options.php:378 inc/theme-options.php:381
+msgid "Exclude categories"
+msgstr "Ausgeschlossene Kategorien"
+
+# @ japibas
+#: inc/theme-options.php:391
+msgid ""
+"Want to exclude some categories from the loop? (Hold down <kbd>CTRL/CMD</"
+"kbd> to select multiple)"
+msgstr ""
+"Möchtest du Kategorien aus dem loop ausschließen? (Drücke <kbd>CTRL/CMD</"
+"kbd> um mehrere auszuwählen)"
+
+# @ japibas
+#: inc/theme-options.php:399
+msgid "Slider"
+msgstr "Slider"
+
+# @ japibas
+#: inc/theme-options.php:403 inc/theme-options.php:406
+msgid "Slider Category"
+msgstr "Slider-Kategorie"
+
+# @ japibas
+#: inc/theme-options.php:416
+msgid "Choose a category for the slider posts. Leave empty to disable slider"
+msgstr ""
+"Wähle eine Kategorie, die im Slider angezeigt wird. Keine wählen, um den "
+"Slider zu deaktivieren. "
+
+# @ japibas
+#: inc/theme-options.php:422 inc/theme-options.php:425
+msgid "Number of Posts"
+msgstr "Anzahl Artikel "
+
+# @ japibas
+#: inc/theme-options.php:429
+msgid ""
+"Number of posts in the slider. Use <code>-1</code> for all posts in the "
+"selected category"
+msgstr ""
+"Anzahl der Artikel im Slider. <code>-1</code> um alle anzeigen zu lassen. "
+
+# @ japibas
+#: inc/theme-options.php:437
+msgid "Other settings"
+msgstr "Weitere Einstellungen"
+
+# @ japibas
+#: inc/theme-options.php:441 inc/theme-options.php:444
+msgid "Footer text"
+msgstr "Footer Text"
+
+# @ japibas
+#: inc/theme-options.php:455
+msgid ""
+"You can add custom <acronym title=\"Hypertext Markup Language\">HTML</"
+"acronym> and/or shortcodes, which will be automatically inserted into your "
+"theme."
+msgstr ""
+"Du kannst selber <acronym title=\"Hypertext Markup Language\">HTML</acronym> "
+"und/oder shortcodes hinzufügen, welche automatisch ins Theme eingebaut "
+"werden. "
+
+# @ japubas
+#: inc/theme-options.php:456
+#, php-format
+msgid "Shortcodes: %s"
+msgstr "Shortcodes: %s"
+
+# @ japibas
+#: inc/upgrade.php:100
+msgid ""
+"Upgrading Japibas will overwrite the current installed version of Japibas. "
+"Are you sure you want to upgrade?. \"Cancel\" to stop, \"OK\" to upgrade."
+msgstr ""
+"Aktualisieren von Japibas wird die aktuell installierte Version "
+"überschreiben. Möchtest du fortfahren? \"abbrechen\" zum abbrechen, \"OK\" "
+"um zu aktualisieren."
+
+# @ japibas
+#: inc/upgrade.php:104
+#, php-format
+msgid ""
+"Japibas %s is available. <a href=\"%s\">Check out what's new</a> or <a href="
+"\"%s\" onclick=\"return japibas_confirm_upgrade('%s');\">update now</a>. "
+msgstr ""
+"Japibas %s ist verfügbar. <a href=\"%s\"> schau dir die Änderungen an </a> "
+"or <a href=\"%s\" onclick=\"return japibas_confirm_upgrade('%s');\">update "
+"now</a>. "
+
+# @ japibas
+#: inc/widgets.php:13
+msgid ""
+"Use this widget to list related posts to the current viewed post based on "
+"category and post format"
+msgstr ""
+"Benutze dieses Widgets um ähnliche Artikel zum aktuell gewählten anzuzeigen. "
+
+# @ japibas
+#: inc/widgets.php:14
+msgid "Japibas: Related Posts"
+msgstr "Japibas: Ähnliche Beiträge"
+
+# @ japibas
+#: inc/widgets.php:84
+msgid "No related posts"
+msgstr "Keine ähnlichen Beiträge"
+
+# @ japibas
+#: inc/widgets.php:182
+msgid "Title:"
+msgstr "Titel:"
+
+# @ japibas
+#: inc/widgets.php:185
+msgid "Number of posts to show:"
+msgstr "Anzahl der anzuzeigenden Artikel:"
+
+# @ japibas
+#: loop-image.php:32
+#, php-format
+msgid ""
+"<a href=\"%1$s\" rel=\"bookmark\">%2$s</a> by <span class=\"author vcard"
+"\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span>"
+msgstr ""
+"<a href=\"%1$s\" rel=\"bookmark\">%2$s</a> by <span class=\"author vcard"
+"\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span>"
+
+# @ japibas
+#: loop-image.php:36 loop-link.php:48 loop-quote.php:27 loop-single.php:56
+#: loop-status.php:24 loop-video.php:40 loop.php:89
+#, php-format
+msgid "View all posts by %s"
+msgstr "Alle Artikel von %s ansehen"
+
+# @ japibas
+#: loop-image.php:47 loop-image.php:53 loop-single.php:49 loop-single.php:58
+#: loop.php:82 loop.php:91
+msgid ", "
+msgstr ","
+
+# @ japibas
+#: loop-image.php:49
+#, php-format
+msgid "Tagged %s"
+msgstr "Tagged %s"
+
+# @ japibas
+#: loop-image.php:52
+#, php-format
+msgid "Posted in %1$s %2$s"
+msgstr "Veröffentlicht in %1$s %2$s "
+
+# @ japibas
+#: loop-link.php:21 loop-single.php:14 loop-video.php:13 loop.php:26
+#, php-format
+msgid "Posted on %s"
+msgstr "Veröffentlicht auf %s"
+
+# @ japibas
+#: loop-link.php:44
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\">Link</a> posted by <span class=\"author vcard"
+"\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> on <a "
+"href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+msgstr ""
+"<a href=\"%1$s\" title=\"%2$s\">Link</a> posted by <span class=\"author vcard"
+"\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> on <a "
+"href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+
+# @ japibas
+#: loop-link.php:46 loop-quote.php:25
+msgid "View all Quotes"
+msgstr "Alle Zitate anzeigen"
+
+# @ japibas
+#: loop-meta.php:43
+msgid "Image navigation"
+msgstr "Bild-Navigation"
+
+# @ japibas
+#: loop-meta.php:44
+msgid "&larr; Previous Image"
+msgstr "&larr; vorheriges Bild"
+
+# @ japibas
+#: loop-meta.php:45
+msgid "Next Image &rarr;"
+msgstr "nächstes BIld &rarr;"
+
+# @ japibas
+#: loop-meta.php:55
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Kategoriearchiv: %s"
+
+# @ japibas
+#: loop-meta.php:69
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Tagarchive: %s "
+
+# @ japibas
+#: loop-meta.php:84
+#, php-format
+msgid "Post format: %s"
+msgstr "Post format: %s"
+
+# @ japibas
+#: loop-meta.php:101
+#, php-format
+msgid "Archives: %s"
+msgstr "Archive: %s"
+
+# @ japibas
+#: loop-meta.php:119
+#, php-format
+msgid "User: %s"
+msgstr "Benutzer: %s"
+
+# @ japibas
+#: loop-meta.php:134
+#, php-format
+msgid "Find %s on:"
+msgstr "Finde %s bei:"
+
+# @ japibas
+#: loop-meta.php:200
+#, php-format
+msgid "%d Search Result for:"
+msgid_plural "%d Search Results for:"
+msgstr[0] "%d Ergebnis für:"
+msgstr[1] "%d Ergebnisse für: "
+
+# @ japibas
+#: loop-meta.php:206
+#, php-format
+msgid "You are browsing the search results for &quot;%1$s&quot;"
+msgstr "Du durchstöberst die Ergebnisse für &quot;%1$s&quot;"
+
+# @ japibas
+#: loop-meta.php:219
+msgid "F Y"
+msgstr "F Y"
+
+# @ japibas
+#: loop-meta.php:224
+#, php-format
+msgid "Archives for %s"
+msgstr "Archive für %s"
+
+# @ japibas
+#: loop-meta.php:227
+msgid "You are browsing the site archives by date."
+msgstr "Du durchsuchst das Archiv nach Daten"
+
+# @ japibas
+#: loop-meta.php:250
+msgid "Blog Archives"
+msgstr "Blog Archiv"
+
+# @ japibas
+#: loop-meta.php:253
+msgid "You are browsing the site archives."
+msgstr "Du durchstöberst das Archiv."
+
+# @ japibas
+#: loop-quote.php:23
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\">Quote</a> posted by <span class=\"author "
+"vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> "
+"on <a href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+msgstr ""
+"<a href=\"%1$s\" title=\"%2$s\">Quote</a> posted by <span class=\"author "
+"vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> "
+"on <a href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+
+# @ japibas
+#: loop-single.php:51 loop.php:84
+#, php-format
+msgid "| Tagged %s"
+msgstr "| Tagged %s"
+
+# @ japibas
+#: loop-single.php:54 loop.php:87
+#, php-format
+msgid ""
+"Posted by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" "
+"title=\"%2$s\">%3$s</a></span> in %4$s %5$s"
+msgstr ""
+"Veröffentlicht von <span class=\"author vcard\"><a class=\"url fn n\" href="
+"\"%1$s\" title=\"%2$s\">%3$s</a></span> in %4$s %5$s"
+
+# @ japibas
+#: loop-status.php:22
+#, php-format
+msgid ""
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s"
+"\">%3$s</a></span>"
+msgstr ""
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s"
+"\">%3$s</a></span>"
+
+# @ japibas
+#: loop-status.php:38
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\">Status</a> posted on <a href=\"%3$s\" rel="
+"\"bookmark\">%4$s</a>"
+msgstr ""
+"<a href=\"%1$s\" title=\"%2$s\">Status</a> posted on <a href=\"%3$s\" rel="
+"\"bookmark\">%4$s</a>"
+
+# @ japibas
+#: loop-status.php:40
+msgid "View all Statuses"
+msgstr "Alle Status ansehen"
+
+# @ japibas
+#: loop-video.php:36
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\">Video</a> posted by <span class=\"author "
+"vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> "
+"on <a href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+msgstr ""
+"<a href=\"%1$s\" title=\"%2$s\">Video</a> posted by <span class=\"author "
+"vcard\"><a class=\"url fn n\" href=\"%3$s\" title=\"%4$s\">%5$s</a></span> "
+"on <a href=\"%6$s\" rel=\"bookmark\">%7$s</a>"
+
+# @ japibas
+#: loop-video.php:38
+msgid "View all Videoes"
+msgstr "Alle Videos ansehen"
+
+# @ japibas
+#: search.php:12
+msgid "Not what you're looking for?"
+msgstr "Nicht das, wonach du gesucht hast?"
+
+# @ japibas
+#: search.php:15
+msgid "Try searching again with some different keywords"
+msgstr "Suche noch einmal mit anderen Begriffen"
+
+# @ japibas
+#: search.php:28
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Entschuldigung, wir konnten keine Ergebnisse finden, die mit deinen "
+"Kriterien übereinstimmen. "
+
+# @ japibas
+#: searchform.php:16
+msgid "Search this site..."
+msgstr "Seite durchsuchen"
+
+# @ japibas
+#: searchform.php:22
+msgid "Search"
+msgstr "Suche"
+
+# @ japibas
+#: slider.php:33
+msgid "Featured Posts"
+msgstr "Featured Artikel"
+
+# @ japibas
+#: slider.php:75
+msgid "Pages:"
+msgstr "Seiten:"
